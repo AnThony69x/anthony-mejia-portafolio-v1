@@ -1,0 +1,80 @@
+/* Reset para #root */
+#root {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.App {
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Remover estilos de Vite por defecto que no necesitamos */
+.logo {
+  height: auto;
+  padding: 0;
+  will-change: auto;
+  transition: none;
+}
+
+.logo:hover {
+  filter: none;
+}
+
+.logo.react:hover {
+  filter: none;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Desactivar animaciones por defecto */
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: none;
+  }
+}
+
+.card {
+  padding: 0;
+}
+
+.read-the-docs {
+  color: transparent;
+}
+
+/* Asegurar que no haya restricciones de ancho */
+* {
+  box-sizing: border-box;
+}
+
+/* Overrides específicos para el layout */
+.App > * {
+  width: 100%;
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Asegurar fullwidth en todos los elementos principales */
+body, #root, .App {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}

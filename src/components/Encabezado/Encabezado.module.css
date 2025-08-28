@@ -1,0 +1,648 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: rgba(15, 20, 25, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 1000;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInDown 0.8s ease-out;
+  
+  /* Variables dinámicas */
+  --color-activo: #3b82f6;
+}
+
+.header.scrolleado {
+  background: rgba(15, 20, 25, 0.95);
+  padding: 0.7rem 0;
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.25),
+    0 0 40px var(--color-activo);
+  border-bottom-color: var(--color-activo);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 4vw, 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  position: relative;
+  z-index: 2;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.logo:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.logoIcon {
+  color: var(--color-activo);
+  font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 10px var(--color-activo));
+  transition: all 0.3s ease;
+}
+
+.logoTexto {
+  background: linear-gradient(135deg, var(--color-activo), #8b5cf6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.025em;
+  transition: all 0.3s ease;
+}
+
+/* NAVEGACIÓN */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: var(--text-secondary);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: var(--font-weight-medium);
+  font-size: clamp(0.85rem, 2vw, 0.95rem);
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  
+  /* Variable para color individual del item */
+  --item-color: #3b82f6;
+}
+
+/* Efecto de onda en hover */
+.navItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    transparent, 
+    rgba(59, 130, 246, 0.1), 
+    transparent
+  );
+  transition: left 0.6s ease;
+  z-index: -1;
+}
+
+.navItem:hover::before {
+  left: 100%;
+}
+
+/* CORREGIDO: Hover con colores dinámicos usando CSS custom properties */
+.navItem:hover {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 
+    0 4px 15px rgba(59, 130, 246, 0.2),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+/* Aplicar colores específicos usando atributos data */
+.navItem[data-color="inicio"]:hover {
+  background: rgba(59, 130, 246, 0.12);
+  box-shadow: 
+    0 4px 15px rgba(59, 130, 246, 0.2),
+    0 0 0 1px rgba(59, 130, 246, 0.1);
+}
+
+.navItem[data-color="sobre-mi"]:hover {
+  background: rgba(16, 185, 129, 0.12);
+  box-shadow: 
+    0 4px 15px rgba(16, 185, 129, 0.2),
+    0 0 0 1px rgba(16, 185, 129, 0.1);
+}
+
+.navItem[data-color="proyectos"]:hover {
+  background: rgba(245, 158, 11, 0.12);
+  box-shadow: 
+    0 4px 15px rgba(245, 158, 11, 0.2),
+    0 0 0 1px rgba(245, 158, 11, 0.1);
+}
+
+.navItem[data-color="contacto"]:hover {
+  background: rgba(239, 68, 68, 0.12);
+  box-shadow: 
+    0 4px 15px rgba(239, 68, 68, 0.2),
+    0 0 0 1px rgba(239, 68, 68, 0.1);
+}
+
+/* CORREGIDO: Item activo con colores dinámicos */
+.navItem.activo[data-color="inicio"] {
+  background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.8));
+  color: white;
+  box-shadow: 
+    0 4px 15px rgba(59, 130, 246, 0.4),
+    0 0 0 1px rgba(59, 130, 246, 0.2);
+}
+
+.navItem.activo[data-color="sobre-mi"] {
+  background: linear-gradient(135deg, #10b981, rgba(16, 185, 129, 0.8));
+  color: white;
+  box-shadow: 
+    0 4px 15px rgba(16, 185, 129, 0.4),
+    0 0 0 1px rgba(16, 185, 129, 0.2);
+}
+
+.navItem.activo[data-color="proyectos"] {
+  background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.8));
+  color: white;
+  box-shadow: 
+    0 4px 15px rgba(245, 158, 11, 0.4),
+    0 0 0 1px rgba(245, 158, 11, 0.2);
+}
+
+.navItem.activo[data-color="contacto"] {
+  background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.8));
+  color: white;
+  box-shadow: 
+    0 4px 15px rgba(239, 68, 68, 0.4),
+    0 0 0 1px rgba(239, 68, 68, 0.2);
+}
+
+/* Hover en items activos */
+.navItem.activo:hover {
+  transform: translateY(-2px) scale(1.02);
+}
+
+.navItem.activo[data-color="inicio"]:hover {
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.9), #3b82f6);
+  box-shadow: 
+    0 6px 20px rgba(59, 130, 246, 0.5),
+    0 0 0 1px rgba(59, 130, 246, 0.3);
+}
+
+.navItem.activo[data-color="sobre-mi"]:hover {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.9), #10b981);
+  box-shadow: 
+    0 6px 20px rgba(16, 185, 129, 0.5),
+    0 0 0 1px rgba(16, 185, 129, 0.3);
+}
+
+.navItem.activo[data-color="proyectos"]:hover {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.9), #f59e0b);
+  box-shadow: 
+    0 6px 20px rgba(245, 158, 11, 0.5),
+    0 0 0 1px rgba(245, 158, 11, 0.3);
+}
+
+.navItem.activo[data-color="contacto"]:hover {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.9), #ef4444);
+  box-shadow: 
+    0 6px 20px rgba(239, 68, 68, 0.5),
+    0 0 0 1px rgba(239, 68, 68, 0.3);
+}
+
+.navItem:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Línea inferior animada con colores dinámicos */
+.navItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--item-color), #8b5cf6);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 1px;
+}
+
+.navItem[data-color="inicio"]::after {
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+.navItem[data-color="sobre-mi"]::after {
+  background: linear-gradient(90deg, #10b981, #8b5cf6);
+}
+
+.navItem[data-color="proyectos"]::after {
+  background: linear-gradient(90deg, #f59e0b, #8b5cf6);
+}
+
+.navItem[data-color="contacto"]::after {
+  background: linear-gradient(90deg, #ef4444, #8b5cf6);
+}
+
+.navItem:hover::after {
+  width: 80%;
+}
+
+.navItem.activo::after {
+  width: 90%;
+  height: 3px;
+}
+
+.icono {
+  font-size: clamp(1rem, 2.2vw, 1.1rem);
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navItem:hover .icono {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.texto {
+  font-size: inherit;
+  transition: all 0.3s ease;
+}
+
+/* MENÚ MÓVIL */
+.menuToggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--text-primary);
+  font-size: clamp(1.2rem, 3vw, 1.4rem);
+  cursor: pointer;
+  padding: 0.6rem;
+  border-radius: var(--border-radius);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  z-index: 3;
+  position: relative;
+}
+
+.menuToggle:hover {
+  background: rgba(59, 130, 246, 0.2);
+  border-color: var(--color-activo);
+  color: var(--color-activo);
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.menuToggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.menuToggle:active {
+  transform: scale(0.95);
+}
+
+/* OVERLAY */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* BARRA DE PROGRESO DE SCROLL */
+.scrollProgress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  transition: width 0.3s ease;
+  opacity: 0;
+  /* El background se establecerá dinámicamente desde JS */
+}
+
+.header.scrolleado .scrollProgress {
+  opacity: 1;
+  animation: progressGlow 2s ease-in-out infinite;
+}
+
+/* ANIMACIONES */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-3px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(3px) rotate(-2deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes progressGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--color-activo);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--color-activo);
+  }
+}
+
+/* RESPONSIVE DESIGN */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .nav {
+    gap: 0.1rem;
+  }
+  
+  .navItem {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .logoTexto {
+    display: none;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .header {
+    padding: 0.8rem 0;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      180deg,
+      var(--bg-secondary) 0%,
+      rgba(26, 31, 46, 0.98) 100%
+    );
+    flex-direction: column;
+    padding: 6rem 2rem 3rem;
+    gap: 1rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 
+      0 10px 30px rgba(0, 0, 0, 0.4),
+      0 0 50px rgba(59, 130, 246, 0.1);
+    max-height: 100vh;
+    overflow-y: auto;
+    backdrop-filter: blur(20px);
+    z-index: 1001;
+  }
+
+  .navAbierto {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navItem {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 1.2rem 1.5rem;
+    font-size: 1.1rem;
+    border-radius: var(--border-radius-lg);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    margin: 0;
+    animation: slideInUp 0.4s ease-out backwards;
+  }
+
+  .navItem:nth-child(1) { animation-delay: 0.1s; }
+  .navItem:nth-child(2) { animation-delay: 0.15s; }
+  .navItem:nth-child(3) { animation-delay: 0.2s; }
+  .navItem:nth-child(4) { animation-delay: 0.25s; }
+
+  /* Mobile - colores específicos en hover */
+  .navItem[data-color="inicio"]:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateX(8px);
+    border-color: #3b82f6;
+  }
+
+  .navItem[data-color="sobre-mi"]:hover {
+    background: rgba(16, 185, 129, 0.2);
+    transform: translateX(8px);
+    border-color: #10b981;
+  }
+
+  .navItem[data-color="proyectos"]:hover {
+    background: rgba(245, 158, 11, 0.2);
+    transform: translateX(8px);
+    border-color: #f59e0b;
+  }
+
+  .navItem[data-color="contacto"]:hover {
+    background: rgba(239, 68, 68, 0.2);
+    transform: translateX(8px);
+    border-color: #ef4444;
+  }
+
+  .icono {
+    font-size: 1.3rem;
+  }
+
+  .texto {
+    font-size: 1.1rem;
+  }
+
+  /* Quitar línea inferior en móvil */
+  .navItem::after {
+    display: none;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .logo {
+    font-size: 1.1rem;
+    gap: 0.6rem;
+  }
+
+  .logoIcon {
+    font-size: 1.3rem;
+  }
+
+  .menuToggle {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+
+  .nav {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .navItem {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  .icono {
+    font-size: 1.2rem;
+  }
+
+  .texto {
+    font-size: 1rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logoIcon {
+    font-size: 1.2rem;
+  }
+}
+
+/* Animación para elementos del menú móvil */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* EFECTOS ESPECIALES */
+
+/* Brillo del logo en scroll */
+.header.scrolleado .logoIcon {
+  animation: logoGlow 2s ease-in-out infinite;
+}
+
+@keyframes logoGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 10px var(--color-activo));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--color-activo));
+  }
+}
+
+/* Efecto de hover mejorado para desktop */
+@media (hover: hover) and (pointer: fine) {
+  .navItem:hover {
+    animation: hoverBounce 0.6s ease-in-out;
+  }
+  
+  @keyframes hoverBounce {
+    0% { transform: translateY(-2px); }
+    50% { transform: translateY(-4px); }
+    100% { transform: translateY(-2px); }
+  }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Alto contraste */
+@media (prefers-contrast: high) {
+  .header {
+    background: var(--bg-secondary);
+    border-bottom: 2px solid var(--accent-color);
+  }
+  
+  .navItem {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .navItem:hover {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+  }
+}
+
+/* Estados de focus mejorados */
+.navItem:focus-visible {
+  background: rgba(59, 130, 246, 0.2);
+  color: var(--text-primary);
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.menuToggle:focus-visible {
+  background: rgba(59, 130, 246, 0.2);
+  box-shadow: 0 0 0 2px var(--accent-color);
+}
