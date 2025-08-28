@@ -3,22 +3,18 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Portfolio profesional de Anthony Mejia (AnThony69x) - Desarrollador Full Stack",
-  "author": "Anthony Mejia (AnThony69x)",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "framer-motion": "^11.5.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "framer-motion": "^11.5.4",
     "react-icons": "^4.12.0"
   },
   "devDependencies": {
-    "@types/react": "^18.2.37",
-    "@types/react-dom": "^18.2.15",
     "@vitejs/plugin-react": "^4.1.1",
     "vite": "^4.5.0"
   }
