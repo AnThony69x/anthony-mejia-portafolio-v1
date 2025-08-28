@@ -243,7 +243,7 @@ const Encabezado = () => {
             onClick={(e) => manejarClickNavegacion(e, '#inicio')}
           >
             <FaCode className={styles.logoIcon} />
-            <span className={styles.logoTexto}>My Portafolio</span>
+            <span className={styles.logoTexto}>Mi Portafolio</span>
           </a>
 
           {/* Navegación desktop */}
