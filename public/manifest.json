@@ -1,0 +1,83 @@
+{
+  "name": "AnThony69x Portfolio - Desarrollador Full Stack",
+  "short_name": "AnThony69x",
+  "description": "Portfolio profesional de Anthony Mejia - Desarrollador Full Stack especializado en React, Laravel y tecnologías modernas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "es",
+  "categories": ["portfolio", "developer", "technology"],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/foto-perfil.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Sobre Mí",
+      "short_name": "About",
+      "description": "Conoce más sobre Anthony Mejia",
+      "url": "/#sobre-mi",
+      "icons": [
+        {
+          "src": "/foto-perfil.jpg",
+          "sizes": "96x96",
+          "type": "image/jpeg"
+        }
+      ]
+    },
+    {
+      "name": "Proyectos",
+      "short_name": "Projects",
+      "description": "Ve mis proyectos destacados",
+      "url": "/#proyectos",
+      "icons": [
+        {
+          "src": "/vite.svg",
+          "sizes": "96x96",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Contacto",
+      "short_name": "Contact",
+      "description": "Contáctame directamente",
+      "url": "/#contacto",
+      "icons": [
+        {
+          "src": "/favicon.ico",
+          "sizes": "96x96",
+          "type": "image/x-icon"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/foto-perfil.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Portfolio de AnThony69x - Vista completa"
+    }
+  ]
+}

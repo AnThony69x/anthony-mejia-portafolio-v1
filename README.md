@@ -1,12 +1,49 @@
-# React + Vite
+# 🚀 Anthony Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> Portfolio profesional de **Anthony Mejia** - Desarrollador Full Stack especializado en tecnologías modernas.
 
-Currently, two official plugins are available:
+![Portfolio Preview](./public/foto-perfil.jpg)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Características
 
-## Expanding the ESLint configuration
+- 📱 **PWA** - Progressive Web App completamente funcional
+- ⚡ **Performance** - Optimizado con Vite y lazy loading
+- 🎨 **Responsive Design** - Funciona perfectamente en todos los dispositivos
+- 🔍 **SEO Optimizado** - Meta tags, sitemap y structured data
+- 🌙 **Smooth Animations** - Framer Motion para transiciones fluidas
+- 🗜️ **Compresión** - Gzip y Brotli para máximo rendimiento
+- 🔧 **Service Worker** - Caching inteligente para experiencia offline
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tecnologías
+
+- **Frontend:** React 19, Vite 7
+- **Styling:** CSS Modules, CSS Custom Properties
+- **Animations:** Framer Motion
+- **Icons:** React Icons
+- **PWA:** Service Worker, Web App Manifest
+- **SEO:** Sitemap, Robots.txt, Meta tags
+- **Performance:** Compression, Bundle optimization
+
+## 🚀 Comandos
+
+```bash
+# Desarrollo
+npm run dev
+
+# Build production
+npm run build
+
+# Build completo con optimizaciones
+npm run build:full
+
+# Solo generar sitemap
+npm run sitemap
+
+# Solo optimizar SEO
+npm run seo
+
+# Preparar para deploy
+npm run deploy:prep
+
+# Preview local
+npm run preview

@@ -1,13 +1,588 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="es" prefix="og: https://ogp.me/ns#">
+<head>
+  <!-- ✅ Meta básicos -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  <!-- ✅ Título principal -->
+  <title>Anthony Mejia - Ingeniero de Software | Portfolio Profesional</title>
+  
+  <!-- ✅ SEO Meta Tags basado en tu información real -->
+  <meta name="description" content="Anthony Mejia, Ingeniero de Software y Desarrollador Web altamente motivado con sólidos conocimientos en React, Laravel, Vue, Node.js y tecnologías modernas. Portfolio profesional con 2+ años de experiencia." />
+  <meta name="keywords" content="Anthony Mejia, AnThony69x, Ingeniero Software, JavaScript, React, Laravel, Vue, Node.js, Supabase, PostgreSQL, NestJS, Tailwind CSS, Desarrollador Web, Portfolio Ecuador" />
+  <meta name="author" content="Anthony Mejia" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="geo.region" content="EC" />
+  <meta name="geo.country" content="Ecuador" />
+  
+  <!-- ✅ Información del sitio -->
+  <meta name="generator" content="React 18.2.0, Vite 5.0" />
+  <meta name="theme-color" content="#3b82f6" />
+  <meta name="msapplication-TileColor" content="#0f172a" />
+  <meta name="application-name" content="Anthony Mejia Portfolio" />
+  
+  <!-- ✅ Open Graph Protocol con información real -->
+  <meta property="og:title" content="Anthony Mejia - Ingeniero de Software | Portfolio Ecuador" />
+  <meta property="og:description" content="Ingeniero de Software ecuatoriano especializado en React, Laravel, Vue y tecnologías web modernas. Creando aplicaciones web elegantes con interfaces limpias y experiencias fluidas." />
+  <meta property="og:image" content="https://anthony69x.dev/foto-perfil.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Anthony Mejia - Ingeniero de Software from Ecuador" />
+  <meta property="og:url" content="https://anthony69x.dev" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Anthony Mejia Portfolio" />
+  <meta property="og:locale" content="es_EC" />
+  <meta property="og:locale:alternate" content="en_US" />
+  
+  <!-- ✅ Twitter Cards con información actualizada -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@AnThony69x" />
+  <meta name="twitter:creator" content="@AnThony69x" />
+  <meta name="twitter:title" content="Anthony Mejia - Ingeniero de Software | Portfolio" />
+  <meta name="twitter:description" content="Desarrollador Web ecuatoriano especializado en React, Laravel y Vue. Creando experiencias digitales excepcionales." />
+  <meta name="twitter:image" content="https://anthony69x.dev/foto-perfil.jpg" />
+  <meta name="twitter:image:alt" content="Anthony Mejia - Software Engineer Portfolio" />
+  
+  <!-- ✅ Favicon correcto basado en tu estructura -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="/src/assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon.ico" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  
+  <!-- ✅ Manifest PWA -->
+  <link rel="manifest" href="/manifest.json" />
+  
+  <!-- ✅ DNS y Performance Optimization -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://github.com" />
+  <link rel="preconnect" href="https://linkedin.com" />
+  <link rel="preconnect" href="https://instagram.com" />
+  <link rel="dns-prefetch" href="https://wa.me" />
+  <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+  
+  <!-- ✅ Fuentes optimizadas -->
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" 
+    rel="stylesheet" 
+    media="print" 
+    onload="this.media='all'" 
+  />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </noscript>
+  
+  <!-- ✅ Critical CSS optimizado -->
+  <style>
+    /* Critical CSS above-the-fold */
+    * { 
+      box-sizing: border-box; 
+      margin: 0;
+      padding: 0;
+    }
+    
+    body { 
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+      color: #f1f5f9;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      min-height: 100vh;
+    }
+    
+    html { 
+      scroll-behavior: smooth; 
+      scroll-padding-top: 80px; 
+    }
+    
+    #root {
+      min-height: 100vh;
+      width: 100%;
+      position: relative;
+    }
+    
+    /* Loading screen mejorada */
+    .loading-screen { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 60%, #1e293b 80%, #0f172a 100%);
+      display: flex; 
+      flex-direction: column;
+      align-items: center; 
+      justify-content: center;
+      z-index: 9999;
+      opacity: 1;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .loading-screen.hide { 
+      opacity: 0; 
+      visibility: hidden;
+      pointer-events: none;
+      transform: scale(1.1);
+    }
+    
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 4px solid rgba(59, 130, 246, 0.1);
+      border-top: 4px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+    }
+    
+    .loading-text {
+      color: #94a3b8;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      animation: pulse 2.5s ease-in-out infinite;
+      text-align: center;
+    }
+    
+    .loading-subtext {
+      color: #64748b;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+      margin-top: 0.5rem;
+      animation: pulse 2.5s ease-in-out infinite reverse;
+    }
+    
+    @keyframes spin { 
+      0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
+      100% { transform: rotate(360deg); filter: hue-rotate(360deg); } 
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.02); }
+    }
+    
+    /* Skip to content para accesibilidad */
+    .skip-to-content {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .skip-to-content:focus {
+      left: 1rem;
+      top: 1rem;
+      width: auto;
+      height: auto;
+      overflow: visible;
+      z-index: 10000;
+      transform: translateY(0);
+    }
+    
+    /* Preloader para imágenes críticas */
+    .preload-image {
+      position: absolute;
+      left: -9999px;
+      top: -9999px;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+    }
+  </style>
+  
+  <!-- ✅ JSON-LD Schema con tu información real -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anthony Mejia",
+    "alternateName": "AnThony69x",
+    "jobTitle": "Ingeniero de Software",
+    "description": "Ingeniero de Software y Desarrollador Web altamente motivado con sólidos conocimientos en React, Laravel, Vue, Node.js y diseño de interfaces web",
+    "url": "https://anthony69x.dev",
+    "image": "https://anthony69x.dev/foto-perfil.jpg",
+    "email": "anthony2003@gmail.com",
+    "telephone": "+593979062065",
+    "gender": "Male",
+    "nationality": "Ecuadorian",
+    "knowsLanguage": ["Spanish", "English"],
+    "birthPlace": {
+      "@type": "Place",
+      "name": "Ecuador"
+    },
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Software Engineer",
+      "occupationLocation": {
+        "@type": "Country",
+        "name": "Ecuador"
+      },
+      "skills": [
+        "JavaScript", "React", "Laravel", "Vue.js", "Node.js", 
+        "NestJS", "Supabase", "PostgreSQL", "Tailwind CSS", 
+        "HTML5", "CSS3", "Git", "Figma", "TypeScript"
+      ],
+      "experienceRequirements": "2+ años de experiencia"
+    },
+    "sameAs": [
+      "https://github.com/AnThony69x",
+      "https://www.linkedin.com/in/anthony-mejia-1138891a8/",
+      "https://www.instagram.com/thony.a_69x/",
+      "https://wa.me/+593979062065"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Freelance Developer"
+    },
+    "homeLocation": {
+      "@type": "Country",
+      "name": "Ecuador"
+    },
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "name": "Universidad de Ingeniería de Software"
+    },
+    "seeks": {
+      "@type": "Demand",
+      "name": "Oportunidades en Frontend y Backend Development"
+    }
+  }
+  </script>
+  
+  <!-- ✅ Organization Schema para Freelance -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Anthony Mejia - Servicios de Desarrollo Web",
+    "description": "Servicios profesionales de desarrollo web y software por Anthony Mejia",
+    "url": "https://anthony69x.dev",
+    "telephone": "+593979062065",
+    "email": "anthony2003@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "Ecuador"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -0.1807,
+      "longitude": -78.4678
+    },
+    "serviceType": [
+      "Desarrollo Web Frontend",
+      "Desarrollo Web Backend", 
+      "Desarrollo Full Stack",
+      "Diseño de Interfaces",
+      "Aplicaciones React",
+      "APIs con Laravel",
+      "Aplicaciones Vue.js"
+    ],
+    "areaServed": {
+      "@type": "Country",
+      "name": "Ecuador"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Anthony Mejia"
+    }
+  }
+  </script>
+  
+  <!-- ✅ Website Schema actualizado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Mi Portafolio - Anthony Mejia",
+    "alternateName": "Anthony Mejia Portfolio",
+    "url": "https://anthony69x.dev",
+    "description": "Portfolio profesional de Anthony Mejia, Ingeniero de Software ecuatoriano especializado en desarrollo web moderno con React, Laravel y Vue",
+    "author": {
+      "@type": "Person",
+      "name": "Anthony Mejia",
+      "url": "https://anthony69x.dev",
+      "sameAs": [
+        "https://github.com/AnThony69x",
+        "https://www.linkedin.com/in/anthony-mejia-1138891a8/"
+      ]
+    },
+    "inLanguage": "es-EC",
+    "isAccessibleForFree": true,
+    "copyrightYear": "2025",
+    "copyrightHolder": {
+      "@type": "Person",
+      "name": "Anthony Mejia"
+    },
+    "potentialAction": [
+      {
+        "@type": "SearchAction",
+        "target": "https://anthony69x.dev/#sobre-mi",
+        "query-input": "required name=search_term_string"
+      },
+      {
+        "@type": "ViewAction", 
+        "target": "https://anthony69x.dev/cv-anthony69x.pdf",
+        "name": "Ver CV de Anthony Mejia"
+      }
+    ],
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Anthony Mejia"
+    }
+  }
+  </script>
+  
+  <!-- ✅ Breadcrumb Schema mejorado -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Inicio",
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://anthony69x.dev/#inicio",
+          "url": "https://anthony69x.dev/",
+          "name": "Inicio - Anthony Mejia Portfolio"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Sobre Mí",
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://anthony69x.dev/#sobre-mi",
+          "url": "https://anthony69x.dev/#sobre-mi",
+          "name": "Sobre Mí - Información Personal y Habilidades"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Proyectos",
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://anthony69x.dev/#proyectos",
+          "url": "https://anthony69x.dev/#proyectos",
+          "name": "Proyectos - Portfolio de Trabajos"
+        }
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Contacto",
+        "item": {
+          "@type": "WebPage",
+          "@id": "https://anthony69x.dev/#contacto",
+          "url": "https://anthony69x.dev/#contacto",
+          "name": "Contacto - Información de Contacto"
+        }
+      }
+    ]
+  }
+  </script>
+  
+  <!-- ✅ FAQ Schema basado en tu perfil -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿Qué tecnologías domina Anthony Mejia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthony Mejia domina React, Laravel, Vue.js, Node.js, NestJS, Supabase, PostgreSQL, Tailwind CSS, JavaScript, TypeScript, HTML5, CSS3, Git y Figma."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuánta experiencia tiene Anthony Mejia como desarrollador?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthony Mejia tiene más de 2 años de experiencia en desarrollo de software y ha completado más de 10 proyectos profesionales."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué servicios ofrece Anthony Mejia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Anthony ofrece servicios de desarrollo web frontend y backend, aplicaciones React, APIs con Laravel, aplicaciones Vue.js, diseño de interfaces y desarrollo full stack."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo puedo contactar a Anthony Mejia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Puedes contactar a Anthony Mejia por WhatsApp (+593979062065), email (anthony2003@gmail.com), LinkedIn, GitHub o Instagram. Todos los enlaces están disponibles en su portfolio."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <!-- ✅ Preload de imágenes críticas -->
+  <img src="/foto-perfil.jpg" alt="" class="preload-image" loading="eager" />
+  <img src="/favicon.ico" alt="" class="preload-image" />
+  
+  <!-- ✅ Loading screen personalizada -->
+  <div class="loading-screen" id="loading" aria-label="Cargando portfolio de Anthony Mejia">
+    <div class="loading-logo">
+      <div class="spinner" role="progressbar" aria-label="Cargando contenido"></div>
+    </div>
+    <div class="loading-text">Mi Portafolio</div>
+    <div class="loading-subtext">Anthony Mejia - Ingeniero de Software</div>
+  </div>
+  
+  <!-- ✅ Skip to content mejorado -->
+  <a href="#main-content" class="skip-to-content" tabindex="1">
+    Saltar al contenido principal
+  </a>
+  
+  <!-- ✅ Contenido principal -->
+  <div id="root" role="main" aria-label="Portfolio de Anthony Mejia - Ingeniero de Software"></div>
+  
+  <!-- ✅ Noscript con información de contacto real -->
+  <noscript>
+    <div style="
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 60%, #1e293b 80%, #0f172a 100%);
+      color: #f1f5f9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      font-family: 'Inter', system-ui, sans-serif;
+      z-index: 10000;
+      line-height: 1.6;
+    ">
+      <div style="max-width: 600px;">
+        <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+          Anthony Mejia
+        </h1>
+        <h2 style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 2rem; color: #94a3b8; font-weight: 500;">
+          Ingeniero de Software 🇪🇨
+        </h2>
+        
+        <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+          <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #e2e8f0;">
+            Este portfolio requiere JavaScript para mostrar todas las funcionalidades interactivas, animaciones y componentes dinámicos.
+          </p>
+          <p style="font-size: 1rem; color: #94a3b8; margin-bottom: 2rem;">
+            Por favor, habilita JavaScript en tu navegador para ver mi trabajo completo.
+          </p>
+        </div>
+
+        <div style="display: grid; gap: 1rem; margin: 2rem 0;">
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem;">
+            <p style="margin: 0; font-weight: 500; color: #10b981;">
+              📧 Email: <a href="mailto:anthony2003@gmail.com" style="color: #10b981; text-decoration: none;">anthony2003@gmail.com</a>
+            </p>
+          </div>
+          <div style="background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 8px; padding: 1rem;">
+            <p style="margin: 0; font-weight: 500; color: #25D366;">
+              📱 WhatsApp: <a href="https://wa.me/+593979062065" style="color: #25D366; text-decoration: none;">+593 97 906 2065</a>
+            </p>
+          </div>
+          <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 1rem;">
+            <p style="margin: 0; font-weight: 500; color: #3b82f6;">
+              💼 LinkedIn: <a href="https://www.linkedin.com/in/anthony-mejia-1138891a8/" style="color: #3b82f6; text-decoration: none;">Anthony Mejia</a>
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(30, 41, 59, 0.6); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2);">
+          <h3 style="color: #3b82f6; margin-bottom: 1rem; font-size: 1.2rem;">🛠️ Tecnologías que domino:</h3>
+          <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">
+            React • Laravel • Vue.js • Node.js • NestJS • Supabase • PostgreSQL • Tailwind CSS • JavaScript • TypeScript
+          </p>
+        </div>
+      </div>
+    </div>
+  </noscript>
+  
+  <!-- ✅ Scripts principales -->
+  <script type="module" src="/src/main.jsx"></script>
+  
+  <!-- ✅ Loading screen management mejorado -->
+  <script>
+    (function() {
+      let loadingHidden = false;
+      
+      function hideLoading() {
+        if (loadingHidden) return;
+        loadingHidden = true;
+        
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+          loadingElement.classList.add('hide');
+          setTimeout(() => {
+            if (loadingElement.parentNode) {
+              loadingElement.parentNode.removeChild(loadingElement);
+            }
+          }, 600);
+        }
+      }
+      
+      // Hide loading when React app is ready
+      window.addEventListener('load', function() {
+        setTimeout(hideLoading, 1000);
+      });
+      
+      // Hide loading when DOMContentLoaded
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(hideLoading, 800);
+      });
+      
+      // Hide on error to prevent infinite loading
+      window.addEventListener('error', hideLoading);
+      
+      // Fallback: hide after maximum time
+      setTimeout(hideLoading, 5000);
+      
+      // Manual trigger for React app
+      window.hideLoadingScreen = hideLoading;
+    })();
+  </script>
+</body>
 </html>

@@ -76,7 +76,6 @@ const Encabezado = () => {
       }
 
       if (seccionActual !== seccionActiva) {
-        console.log('🔄 Sección detectada por scroll:', seccionActual)
         setSeccionActiva(seccionActual)
       }
     }
@@ -124,7 +123,6 @@ const Encabezado = () => {
         })
 
         const seccionId = mejorSeccion.target.id
-        console.log('🎯 Nueva sección activa:', seccionId) // DEBUG
         
         if (seccionId && elementosNav.some(nav => nav.id === seccionId)) {
           setSeccionActiva(seccionId)
@@ -134,13 +132,10 @@ const Encabezado = () => {
 
     // Función para inicializar el observador
     const inicializarObservador = () => {
-      const secciones = elementosNav.map(nav => document.getElementById(nav.id)).filter(Boolean)
-      console.log('📋 Secciones encontradas:', secciones.map(s => s.id)) // DEBUG
-      
+      const secciones = elementosNav.map(nav => document.getElementById(nav.id)).filter(Boolean)      
       if (secciones.length === elementosNav.length) {
         secciones.forEach(seccion => {
           observador.observe(seccion)
-          console.log('👀 Observando sección:', seccion.id) // DEBUG
         })
         return true
       }
@@ -193,7 +188,6 @@ const Encabezado = () => {
 
   // DEBUG: Mostrar sección activa (solo para desarrollo)
   useEffect(() => {
-    console.log('✅ Sección activa actual:', seccionActiva, 'Color:', obtenerColorActivo())
     
     // Mostrar indicador visual temporal (solo para debug)
     if (process.env.NODE_ENV === 'development') {
