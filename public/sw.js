@@ -23,7 +23,14 @@ const NETWORK_ONLY_PATTERNS = [
   'https://api.github.com/',
   'https://wa.me/',
   'https://www.linkedin.com/',
-  'https://www.instagram.com/'
+  'https://www.instagram.com/',
+  // Vite development patterns
+  '/@vite/',
+  '/@react-refresh',
+  '/src/',
+  '/@fs/',
+  '/@id/',
+  '/node_modules/'
 ];
 
 // Función para verificar si una URL debe ser ignorada

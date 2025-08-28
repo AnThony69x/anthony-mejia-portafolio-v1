@@ -1,3 +1,32 @@
+// ✅ Desregistrar Service Worker (para desarrollo)
+export const desregistrarSW = async () => {
+  if ('serviceWorker' in navigator) {
+    try {
+      const registrations = await navigator.serviceWorker.getRegistrations();
+      for (let registration of registrations) {
+        const result = await registration.unregister();
+        console.log('SW: Unregistered:', result);
+      }
+      
+      // Limpiar todas las caches
+      if ('caches' in window) {
+        const cacheNames = await caches.keys();
+        for (let cacheName of cacheNames) {
+          await caches.delete(cacheName);
+          console.log('SW: Cache deleted:', cacheName);
+        }
+      }
+      
+      console.log('SW: All service workers and caches cleared');
+      return true;
+    } catch (error) {
+      console.warn('SW: Failed to unregister:', error);
+      return false;
+    }
+  }
+  return false;
+};
+
 // ✅ Registrar Service Worker
 export const registrarSW = () => {
   if ('serviceWorker' in navigator) {
