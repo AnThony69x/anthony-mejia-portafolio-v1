@@ -40,7 +40,7 @@ const EnlacesSociales = () => {
     },
     { 
       icono: SiGmail, 
-      url: 'mailto:anthony2003@gmail.com', 
+      url: 'mailto:anthonimejia2003@gmail.com', 
       nombre: 'Email',
       color: '#ea4335',
       descripcion: 'Contacto directo'
