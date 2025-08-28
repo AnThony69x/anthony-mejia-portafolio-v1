@@ -7,15 +7,13 @@
   "author": "Anthony Mejia (AnThony69x)",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && npm run post-build",
+    "post-build": "npm run sitemap && npm run optimize",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:full": "npm run build && npm run compress && npm run optimize && npm run sitemap",
     "compress": "node scripts/compress.js",
     "optimize": "node scripts/optimize.js", 
-    "sitemap": "node scripts/sitemap.js",
-    "seo": "npm run sitemap && npm run optimize",
-    "deploy:prep": "npm run build:full && echo '🚀 Portfolio listo para deploy!'"
+    "sitemap": "node scripts/sitemap.js"
   },
   "dependencies": {
     "framer-motion": "^12.23.12",
