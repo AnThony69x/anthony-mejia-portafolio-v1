@@ -30,9 +30,9 @@ const Contacto = () => {
   const sectionRef = useRef(null)
 
   // EmailJS configuration
-  const EMAILJS_SERVICE_ID = 'service_portfolio' // To be configured in EmailJS
-  const EMAILJS_TEMPLATE_ID = 'template_contact' // To be configured in EmailJS  
-  const EMAILJS_PUBLIC_KEY = 'your_public_key_here' // To be configured in EmailJS
+  const EMAILJS_SERVICE_ID = 'service_nwo3uif'
+  const EMAILJS_TEMPLATE_ID = 'template_rjibxwh'
+  const EMAILJS_PUBLIC_KEY = 'rfwrVAeTKhEfIuTeL'
 
   // Detectar visibilidad de la sección
   useEffect(() => {
@@ -61,8 +61,8 @@ const Contacto = () => {
     {
       icono: <SiGmail />,
       titulo: 'Email',
-      valor: 'anthony.dev@gmail.com',
-      enlace: 'mailto:anthony.dev@gmail.com',
+      valor: 'anthonimejia2003@gmail.com',
+      enlace: 'mailto:anthonimejia2003@gmail.com',
       color: '#ea4335'
     },
     {
@@ -172,7 +172,7 @@ const Contacto = () => {
         from_email: formData.email,
         subject: formData.asunto,
         message: formData.mensaje,
-        to_email: 'anthony.dev@gmail.com',
+        to_email: 'anthonimejia2003@gmail.com',
         reply_to: formData.email
       }
 
