@@ -7,9 +7,12 @@ import {
   FaGithub,
   FaLinkedin,
   FaInstagram,
-  FaWhatsapp
+  FaWhatsapp,
+  FaCheckCircle,
+  FaExclamationTriangle
 } from 'react-icons/fa'
 import { SiGmail } from 'react-icons/si'
+import emailjs from '@emailjs/browser'
 import styles from './Contacto.module.css'
 
 const Contacto = () => {
@@ -22,8 +25,14 @@ const Contacto = () => {
   
   const [errores, setErrores] = useState({})
   const [enviando, setEnviando] = useState(false)
+  const [mensajeEstado, setMensajeEstado] = useState({ tipo: '', texto: '', visible: false })
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef(null)
+
+  // EmailJS configuration
+  const EMAILJS_SERVICE_ID = 'service_portfolio' // To be configured in EmailJS
+  const EMAILJS_TEMPLATE_ID = 'template_contact' // To be configured in EmailJS  
+  const EMAILJS_PUBLIC_KEY = 'your_public_key_here' // To be configured in EmailJS
 
   // Detectar visibilidad de la sección
   useEffect(() => {
@@ -52,8 +61,8 @@ const Contacto = () => {
     {
       icono: <SiGmail />,
       titulo: 'Email',
-      valor: 'anthonimejia2003@gmail.com',
-      enlace: 'mailto:anthonimejia2003@gmail.com',
+      valor: 'anthony.dev@gmail.com',
+      enlace: 'mailto:anthony.dev@gmail.com',
       color: '#ea4335'
     },
     {
@@ -154,29 +163,67 @@ const Contacto = () => {
     }
 
     setEnviando(true)
+    setMensajeEstado({ tipo: '', texto: '', visible: false })
 
     try {
-      // Simular envío del formulario (en un proyecto real, aquí iría la lógica de envío)
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      
-      // Crear enlace mailto con los datos del formulario
-      const mailtoLink = `mailto:anthonimejia2003@gmail.com?subject=${encodeURIComponent(formData.asunto)}&body=${encodeURIComponent(
-        `Nombre: ${formData.nombre}\nEmail: ${formData.email}\n\nMensaje:\n${formData.mensaje}`
-      )}`
-      
-      // Abrir cliente de email
-      window.location.href = mailtoLink
-      
-      // Limpiar formulario
-      setFormData({
-        nombre: '',
-        email: '',
-        asunto: '',
-        mensaje: ''
-      })
+      // Configurar parámetros del template para EmailJS
+      const templateParams = {
+        from_name: formData.nombre,
+        from_email: formData.email,
+        subject: formData.asunto,
+        message: formData.mensaje,
+        to_email: 'anthony.dev@gmail.com',
+        reply_to: formData.email
+      }
+
+      // Enviar email usando EmailJS
+      const response = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      )
+
+      if (response.status === 200) {
+        // Éxito - mostrar mensaje de confirmación
+        setMensajeEstado({
+          tipo: 'exito',
+          texto: '¡Mensaje enviado con éxito! Te responderé lo antes posible.',
+          visible: true
+        })
+        
+        // Limpiar formulario
+        setFormData({
+          nombre: '',
+          email: '',
+          asunto: '',
+          mensaje: ''
+        })
+        
+        // Ocultar mensaje después de 5 segundos
+        setTimeout(() => {
+          setMensajeEstado(prev => ({ ...prev, visible: false }))
+        }, 5000)
+        
+      } else {
+        throw new Error('Error en la respuesta del servicio')
+      }
       
     } catch (error) {
       console.error('Error al enviar el formulario:', error)
+      
+      // Mostrar mensaje de error
+      setMensajeEstado({
+        tipo: 'error',
+        texto: 'Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contáctame directamente.',
+        visible: true
+      })
+      
+      // Ocultar mensaje después de 7 segundos
+      setTimeout(() => {
+        setMensajeEstado(prev => ({ ...prev, visible: false }))
+      }, 7000)
+      
     } finally {
       setEnviando(false)
     }
@@ -306,6 +353,22 @@ const Contacto = () => {
                     </>
                   )}
                 </button>
+
+                {/* Mensaje de estado */}
+                {mensajeEstado.visible && (
+                  <div className={`${styles.mensajeEstado} ${styles[mensajeEstado.tipo]}`}>
+                    <div className={styles.mensajeIcono}>
+                      {mensajeEstado.tipo === 'exito' ? (
+                        <FaCheckCircle />
+                      ) : (
+                        <FaExclamationTriangle />
+                      )}
+                    </div>
+                    <div className={styles.mensajeTexto}>
+                      {mensajeEstado.texto}
+                    </div>
+                  </div>
+                )}
               </form>
             </div>
           </div>
