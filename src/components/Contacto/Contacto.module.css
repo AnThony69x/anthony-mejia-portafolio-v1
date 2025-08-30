@@ -287,6 +287,57 @@
 }
 
 /* ================================== */
+/* MENSAJE DE ESTADO */
+/* ================================== */
+
+.mensajeEstado {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 1rem;
+  border: 1px solid;
+  animation: slideInUp 0.4s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.mensajeEstado.exito {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.3);
+  color: #10b981;
+}
+
+.mensajeEstado.error {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+.mensajeIcono {
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.mensajeTexto {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.mensajeEstado::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: currentColor;
+}
+
+/* ================================== */
 /* INFORMACIÓN DE CONTACTO */
 /* ================================== */
 
