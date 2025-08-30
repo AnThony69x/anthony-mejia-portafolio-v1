@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import Encabezado from './components/Encabezado/Encabezado'
 import Heroe from './components/Heroe/Heroe'
+import Contacto from './components/Contacto/Contacto'
 import './styles/globales.css'
 
 // ✅ Lazy loading solo para SobreMi
@@ -61,27 +62,7 @@ function App() {
       </section>
 
       {/* AGREGADO: Sección Contacto */}
-      <section 
-        id="contacto"
-        style={{ 
-          padding: '6rem 2rem', 
-          textAlign: 'center',
-          background: '#0f172a',
-          width: '100%',
-          minHeight: '80vh'
-        }}
-      >
-        <h2 style={{ 
-          color: '#ef4444', 
-          marginBottom: '2rem',
-          fontSize: 'clamp(2rem, 5vw, 3rem)'
-        }}>
-          📧 Contacto
-        </h2>
-        <p style={{color: '#94a3b8', fontSize: '1.2rem'}}>
-          Sección en desarrollo...
-        </p>
-      </section>
+      <Contacto />
     </div>
   )
 }
