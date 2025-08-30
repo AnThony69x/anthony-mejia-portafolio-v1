@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from 'react'
 import Encabezado from './components/Encabezado/Encabezado'
 import Heroe from './components/Heroe/Heroe'
 import './styles/globales.css'
+import Proyectos from './components/Proyectos/Proyectos'
 
 // ✅ Lazy loading solo para SobreMi
 const SobreMi = lazy(() => import('./components/SobreMi/SobreMi'))
@@ -36,29 +37,7 @@ function App() {
       <Suspense fallback={<Loading />}>
         <SobreMi />
       </Suspense>
-
-      {/* AGREGADO: Sección Proyectos */}
-      <section 
-        id="proyectos" 
-        style={{ 
-          padding: '6rem 2rem', 
-          textAlign: 'center',
-          background: '#1e293b',
-          width: '100%',
-          minHeight: '80vh'
-        }}
-      >
-        <h2 style={{ 
-          color: '#f59e0b', 
-          marginBottom: '2rem',
-          fontSize: 'clamp(2rem, 5vw, 3rem)'
-        }}>
-          💼 Proyectos
-        </h2>
-        <p style={{color: '#94a3b8', fontSize: '1.2rem'}}>
-          Sección en desarrollo...
-        </p>
-      </section>
+      <Proyectos />
 
       {/* AGREGADO: Sección Contacto */}
       <section 
