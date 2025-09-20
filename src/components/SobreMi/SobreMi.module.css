@@ -584,7 +584,7 @@
 }
 
 /* ================================== */
-/* RESPONSIVE DESIGN */
+/* RESPONSIVE DESIGN - ESPACIADO MÓVIL MEJORADO */
 /* ================================== */
 
 /* DESKTOP LARGE */
@@ -592,7 +592,7 @@
   .gridPrincipal {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .gridHabilidades {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -603,7 +603,7 @@
   .gridPrincipal {
     grid-template-columns: repeat(3, 1fr);
   }
-  
+
   .gridHabilidades {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -611,15 +611,24 @@
 
 /* TABLET */
 @media (max-width: 1023px) {
+  .sobreMi {
+    padding: clamp(8rem, 15vh, 10rem) 0 clamp(4rem, 8vh, 6rem);
+  }
+
+  .encabezado {
+    margin-top: 3rem;
+    margin-bottom: clamp(3rem, 6vh, 4rem);
+  }
+
   .gridPrincipal {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
+
   .gridHabilidades {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .gridEstadisticas {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -628,99 +637,95 @@
 /* MOBILE LANDSCAPE */
 @media (max-width: 768px) {
   .sobreMi {
-    padding: clamp(4rem, 8vh, 5rem) 0 clamp(3rem, 6vh, 4rem);
+    padding: clamp(10rem, 18vh, 12rem) 0 clamp(4rem, 8vh, 6rem);
   }
-  
+
+  .encabezado {
+    margin-top: 4rem;
+    margin-bottom: clamp(3rem, 6vh, 4rem);
+  }
+
   .gridHabilidades {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
   }
-  
+
   .gridEstadisticas {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .botonesCta {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .botonCta {
     width: 100%;
     max-width: 280px;
   }
 }
 
-/* MOBILE PORTRAIT */
+/* MOBILE PORTRAIT - MÁXIMO ESPACIADO */
 @media (max-width: 640px) {
+  .sobreMi {
+    padding: clamp(12rem, 20vh, 14rem) 0 clamp(3rem, 6vh, 4rem);
+  }
+
+  .encabezado {
+    margin-top: 5rem;
+    margin-bottom: 4rem;
+  }
+
   .gridHabilidades {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .gridEstadisticas {
     grid-template-columns: 1fr;
   }
-  
+
   .tarjetaPrincipal {
     padding: 1.5rem;
   }
-  
+
   .callToAction {
     padding: 2rem 1.5rem;
   }
 }
 
-/* MOBILE SMALL */
+/* MOBILE SMALL - ESPACIADO EXTRA */
 @media (max-width: 480px) {
+  .sobreMi {
+    padding: clamp(14rem, 25vh, 16rem) 0 clamp(3rem, 6vh, 4rem);
+  }
+
+  .encabezado {
+    margin-top: 6rem;
+    margin-bottom: 4rem;
+  }
+
   .gridHabilidades {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
   }
-  
+
   .habilidadItem {
     padding: 1rem;
   }
-  
+
   .estadisticaItem {
     padding: 1.5rem 1rem;
   }
 }
 
-/* ================================== */
-/* ACCESIBILIDAD */
-/* ================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
+/* MOBILE EXTRA SMALL - MÁXIMO ESPACIADO */
+@media (max-width: 360px) {
+  .sobreMi {
+    padding: clamp(16rem, 28vh, 18rem) 0 clamp(2rem, 5vh, 3rem);
   }
-}
 
-@media (prefers-contrast: high) {
-  .tarjetaPrincipal {
-    border: 2px solid #3b82f6;
+  .encabezado {
+    margin-top: 7rem;
+    margin-bottom: 4rem;
   }
-  
-  .habilidadItem {
-    border: 2px solid #94a3b8;
-  }
-  
-  .estadisticaItem {
-    border: 2px solid #3b82f6;
-  }
-}
-
-/* Estados de focus para accesibilidad */
-.tarjetaPrincipal:focus-visible,
-.habilidadItem:focus-visible,
-.estadisticaItem:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
-}
-
-.botonCta:focus-visible {
-  outline: 2px solid #3b82f6;
-  outline-offset: 2px;
 }

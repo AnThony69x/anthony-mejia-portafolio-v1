@@ -778,6 +778,12 @@
 
 /* MOBILE PORTRAIT */
 @media (max-width: 640px) {
+  .heroe {
+    min-height: 80vh; /* Reducir altura */
+    padding: 3rem 0 7rem; /* Aumentar significativamente padding inferior */
+    margin-bottom: 4rem; /* Más margen inferior */
+  }
+
   .container {
     padding: 0 1rem;
   }
@@ -817,6 +823,13 @@
 
 /* MOBILE SMALL */
 @media (max-width: 480px) {
+
+  .heroe {
+    min-height: 75vh; /* Reducir altura */
+    padding: 2rem 0 8rem; /* Aumentar mucho el padding inferior */
+    margin-bottom: 5rem; /* Máximo margen inferior */
+  }
+
   .saludo {
     font-size: clamp(2rem, 8vw, 2.8rem);
   }
@@ -837,6 +850,13 @@
 
 /* MOBILE EXTRA SMALL */
 @media (max-width: 360px) {
+
+  .heroe {
+    min-height: 70vh; /* Altura mínima */
+    padding: 2rem 0 9rem; /* Padding inferior máximo */
+    margin-bottom: 6rem; /* Margen inferior máximo */
+  }
+  
   .saludo {
     font-size: 2rem;
     line-height: 1.2;
