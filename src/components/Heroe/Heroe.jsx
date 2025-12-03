@@ -34,7 +34,7 @@ const Heroe = () => {
               <div className={styles.lineaDecorariva}></div>
             </div>
 
-            <h2 className={styles.titulo}>Ingeniero de Software</h2>
+            <h2 className={styles.titulo}>Estudiante de Ingeniería de Software</h2>
 
             <p className={styles.descripcion}>
               Creo aplicaciones web modernas y responsivas con interfaces limpias y
