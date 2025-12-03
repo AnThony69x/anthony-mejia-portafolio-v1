@@ -91,7 +91,7 @@ const Contacto = () => {
     },
     { 
       icono: FaLinkedin, 
-      url: 'https://www.linkedin.com/in/anthony-mejia-1138891a8/', 
+      url: 'https://www.linkedin.com/in/anthony-mejia-o-69x/', 
       nombre: 'LinkedIn',
       color: '#0077b5'
     },
