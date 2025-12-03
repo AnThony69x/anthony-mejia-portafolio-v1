@@ -780,7 +780,7 @@
 @media (max-width: 640px) {
   .heroe {
     min-height: 80vh; /* Reducir altura */
-    padding: 3rem 0 7rem; /* Aumentar significativamente padding inferior */
+    padding: 6rem 0 7rem; /* Aumentar padding superior e inferior */
     margin-bottom: 4rem; /* Más margen inferior */
   }
 
@@ -826,7 +826,7 @@
 
   .heroe {
     min-height: 75vh; /* Reducir altura */
-    padding: 2rem 0 8rem; /* Aumentar mucho el padding inferior */
+    padding: 5.5rem 0 8rem; /* Aumentar padding superior e inferior */
     margin-bottom: 5rem; /* Máximo margen inferior */
   }
 
@@ -853,7 +853,7 @@
 
   .heroe {
     min-height: 70vh; /* Altura mínima */
-    padding: 2rem 0 9rem; /* Padding inferior máximo */
+    padding: 5rem 0 9rem; /* Aumentar padding superior y mantener inferior */
     margin-bottom: 6rem; /* Margen inferior máximo */
   }
   
