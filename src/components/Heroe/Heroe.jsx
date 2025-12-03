@@ -48,7 +48,7 @@ const Heroe = () => {
 
             <div className={styles.botonesAccion}>
               <a 
-                href="/cv-anthony69x.pdf"
+                href="/CV_Anthony_Mejia.pdf"
                 download
                 className={`${styles.boton} ${styles.botonPrimario}`}
               >

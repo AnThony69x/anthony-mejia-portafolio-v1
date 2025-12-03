@@ -45,7 +45,7 @@ export const trackPageView = (pageName) => {
 
 export const trackDownloadCV = () => {
   trackEvent('file_download', {
-    file_name: 'cv-anthony69x.pdf',
+    file_name: 'CV_Anthony_Mejia.pdf',
     label: 'CV Download',
     category: 'Download'
   });
