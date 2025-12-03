@@ -97,7 +97,7 @@ const habilidadesPrincipales = [
       icono: <FaMobile />
     },
     {
-      numero: "1",
+      numero: "",
       descripcion: "Título universitario",
       icono: <FaGraduationCap />
     }

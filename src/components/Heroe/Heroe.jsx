@@ -67,7 +67,7 @@ const Heroe = () => {
             <div className={styles.imagenWrapper}>
               <div className={styles.imagenContainer}>
                 <img
-                  src="/foto-perfil.jpg"
+                  src="/foto-perfil3.jpg"
                   alt="Foto de perfil de AnThony69x - Ingeniería de Software"
                   className={styles.fotoPerfil}
                 />

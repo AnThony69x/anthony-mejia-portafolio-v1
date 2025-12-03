@@ -74,7 +74,7 @@ const Proyectos = () => {
   tecnologias: ["React", "Vite", "JavaScript", "CSS"],
   categoria: "frontend",
   githubUrl: "https://github.com/AnThony69x/mi-portafolio",
-  liveUrl: "https://mi-portafolio-beta-dun.vercel.app/",
+  liveUrl: "https://anthony-mejia-portafolio-v1.vercel.app/",
   destacado: false
 }
   ];
