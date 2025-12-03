@@ -612,11 +612,11 @@
 /* TABLET */
 @media (max-width: 1023px) {
   .sobreMi {
-    padding: clamp(8rem, 15vh, 10rem) 0 clamp(4rem, 8vh, 6rem);
+    padding: clamp(5rem, 10vh, 7rem) 0 clamp(4rem, 8vh, 6rem);
   }
 
   .encabezado {
-    margin-top: 3rem;
+    margin-top: 0;
     margin-bottom: clamp(3rem, 6vh, 4rem);
   }
 
@@ -637,11 +637,11 @@
 /* MOBILE LANDSCAPE */
 @media (max-width: 768px) {
   .sobreMi {
-    padding: clamp(10rem, 18vh, 12rem) 0 clamp(4rem, 8vh, 6rem);
+    padding: clamp(5rem, 10vh, 6rem) 0 clamp(4rem, 8vh, 6rem);
   }
 
   .encabezado {
-    margin-top: 4rem;
+    margin-top: 0;
     margin-bottom: clamp(3rem, 6vh, 4rem);
   }
 
@@ -668,12 +668,12 @@
 /* MOBILE PORTRAIT - MÁXIMO ESPACIADO */
 @media (max-width: 640px) {
   .sobreMi {
-    padding: clamp(12rem, 20vh, 14rem) 0 clamp(3rem, 6vh, 4rem);
+    padding: clamp(5rem, 10vh, 6rem) 0 clamp(3rem, 6vh, 4rem);
   }
 
   .encabezado {
-    margin-top: 5rem;
-    margin-bottom: 4rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
   }
 
   .gridHabilidades {
@@ -696,12 +696,12 @@
 /* MOBILE SMALL - ESPACIADO EXTRA */
 @media (max-width: 480px) {
   .sobreMi {
-    padding: clamp(14rem, 25vh, 16rem) 0 clamp(3rem, 6vh, 4rem);
+    padding: clamp(5rem, 10vh, 6rem) 0 clamp(3rem, 6vh, 4rem);
   }
 
   .encabezado {
-    margin-top: 6rem;
-    margin-bottom: 4rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
   }
 
   .gridHabilidades {
@@ -721,11 +721,11 @@
 /* MOBILE EXTRA SMALL - MÁXIMO ESPACIADO */
 @media (max-width: 360px) {
   .sobreMi {
-    padding: clamp(16rem, 28vh, 18rem) 0 clamp(2rem, 5vh, 3rem);
+    padding: clamp(5rem, 10vh, 6rem) 0 clamp(2rem, 5vh, 3rem);
   }
 
   .encabezado {
-    margin-top: 7rem;
-    margin-bottom: 4rem;
+    margin-top: 0;
+    margin-bottom: 3rem;
   }
 }

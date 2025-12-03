@@ -780,8 +780,8 @@
 @media (max-width: 640px) {
   .heroe {
     min-height: 80vh; /* Reducir altura */
-    padding: 6rem 0 7rem; /* Aumentar padding superior e inferior */
-    margin-bottom: 4rem; /* Más margen inferior */
+    padding: 6rem 0 0; /* Aumentar padding superior, eliminar inferior */
+    margin-bottom: 0; /* Eliminar margen inferior */
   }
 
   .container {
@@ -826,8 +826,8 @@
 
   .heroe {
     min-height: 75vh; /* Reducir altura */
-    padding: 5.5rem 0 8rem; /* Aumentar padding superior e inferior */
-    margin-bottom: 5rem; /* Máximo margen inferior */
+    padding: 5.5rem 0 0; /* Aumentar padding superior, eliminar inferior */
+    margin-bottom: 0; /* Eliminar margen inferior */
   }
 
   .saludo {
@@ -853,8 +853,8 @@
 
   .heroe {
     min-height: 70vh; /* Altura mínima */
-    padding: 5rem 0 9rem; /* Aumentar padding superior y mantener inferior */
-    margin-bottom: 6rem; /* Margen inferior máximo */
+    padding: 5rem 0 0; /* Aumentar padding superior, eliminar inferior */
+    margin-bottom: 0; /* Eliminar margen inferior */
   }
   
   .saludo {
