@@ -68,7 +68,7 @@ const Proyectos = () => {
 },
 {
   id: 6,
-  titulo: "Portfolio Profesional",
+  titulo: "Portafolio Profesional",
   descripcion: "Sitio web personal moderno y responsive con animaciones fluidas, tema oscuro/claro, optimización SEO y experiencia de usuario excepcional en todos los dispositivos.",
   imagen: "/proyecto6.jpg",
   tecnologias: ["React", "Vite", "JavaScript", "CSS"],
