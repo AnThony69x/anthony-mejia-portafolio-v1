@@ -22,17 +22,17 @@ const Proyectos = () => {
     //   liveUrl: "https://ecommerce-demo.vercel.app",
     //   destacado: true
     // },
-    // {
-    //   id: 2,
-    //   titulo: "Dashboard Analytics",
-    //   descripcion: "Panel de control interactivo con gráficos en tiempo real, métricas de rendimiento y visualización de datos.",
-    //   imagen: "/proyecto2.jpg",
-    //   tecnologias: ["Next.js", "React", "PostgreSQL", "CSS"],
-    //   categoria: "frontend",
-    //   githubUrl: "https://github.com/AnThony69x/dashboard-analytics",
-    //   liveUrl: "https://dashboard-demo.vercel.app",
-    //   destacado: true
-    // },
+{
+  id: 2,
+  titulo: "Sistema de Visualización de Datos Spotify",
+  descripcion: "Sistema de análisis y visualización de datos musicales con 10 tipos de gráficos profesionales, búsqueda de canciones, comparador de artistas y exportación PNG/HTML.",
+  imagen: "/proyecto2.jpg",
+  tecnologias: ["Python", "Pandas", "Matplotlib", "Seaborn", "Plotly"],
+  categoria: "data-science",
+  githubUrl: "https://github.com/AnThony69x/data-visualizacion",
+  liveUrl: null,
+  destacado: true
+},
 {
   id: 3,
   titulo: "TaskFlow - Gestión de Tareas",
