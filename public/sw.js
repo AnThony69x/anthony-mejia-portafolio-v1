@@ -1,6 +1,9 @@
-const CACHE_NAME = 'anthony-portafolio-v1.3';
-const STATIC_CACHE = 'static-cache-v1.3';
-const DYNAMIC_CACHE = 'dynamic-cache-v1.3';
+// BUILD_ID is injected at build time to force cache refresh on new deploys
+const BUILD_ID = '20260331202743';
+const CACHE_VERSION = BUILD_ID || 'dev';
+const CACHE_NAME = `anthony-portafolio-${CACHE_VERSION}`;
+const STATIC_CACHE = `static-cache-${CACHE_VERSION}`;
+const DYNAMIC_CACHE = `dynamic-cache-${CACHE_VERSION}`;
 
 // Archivos críticos para cachear
 const urlsToCache = [
