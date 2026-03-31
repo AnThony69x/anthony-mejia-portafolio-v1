@@ -5,13 +5,13 @@ const path = require('path');
 const DIST_PATH = path.join(__dirname, '../dist');
 const INDEX_PATH = path.join(DIST_PATH, 'index.html');
 
-console.log('⚡ Optimizando build para AnThony69x Portfolio...\n');
+console.log('⚡ Optimizando build para AnThony69x Portafolio...\n');
 
 // ✅ Meta tags SEO optimizados
 const SEO_META_TAGS = `
-  <!-- SEO Meta Tags - AnThony69x Portfolio -->
-  <meta name="description" content="Anthony Mejia (AnThony69x) - Desarrollador Full Stack especializado en React, Laravel, Vue.js y tecnologías modernas. Portfolio profesional con proyectos destacados.">
-  <meta name="keywords" content="Anthony Mejia, AnThony69x, desarrollador full stack, React, Laravel, Vue.js, JavaScript, PHP, portfolio, developer, programador">
+  <!-- SEO Meta Tags - AnThony69x Portafolio -->
+  <meta name="description" content="Anthony Mejia (AnThony69x) - Desarrollador Full Stack especializado en React, Laravel, Vue.js y tecnologías modernas. Portafolio profesional con proyectos destacados.">
+  <meta name="keywords" content="Anthony Mejia, AnThony69x, desarrollador full stack, React, Laravel, Vue.js, JavaScript, PHP, portafolio, developer, programador">
   <meta name="author" content="Anthony Mejia (AnThony69x)">
   <meta name="robots" content="index, follow">
   <meta name="language" content="Spanish">
@@ -20,20 +20,20 @@ const SEO_META_TAGS = `
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://anthony69x-portfolio.vercel.app/">
-  <meta property="og:title" content="AnThony69x - Desarrollador Full Stack Portfolio">
-  <meta property="og:description" content="Portfolio profesional de Anthony Mejia - Desarrollador Full Stack especializado en tecnologías modernas">
+  <meta property="og:title" content="AnThony69x - Desarrollador Full Stack Portafolio">
+  <meta property="og:description" content="Portafolio profesional de Anthony Mejia - Desarrollador Full Stack especializado en tecnologías modernas">
   <meta property="og:image" content="https://anthony69x-portfolio.vercel.app/foto-perfil.jpg">
   <meta property="og:image:alt" content="Anthony Mejia - Desarrollador Full Stack">
-  <meta property="og:site_name" content="AnThony69x Portfolio">
+  <meta property="og:site_name" content="AnThony69x Portafolio">
   <meta property="og:locale" content="es_ES">
   
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://anthony69x-portfolio.vercel.app/">
   <meta property="twitter:title" content="AnThony69x - Desarrollador Full Stack">
-  <meta property="twitter:description" content="Portfolio profesional de Anthony Mejia - Desarrollador Full Stack">
+  <meta property="twitter:description" content="Portafolio profesional de Anthony Mejia - Desarrollador Full Stack">
   <meta property="twitter:image" content="https://anthony69x-portfolio.vercel.app/foto-perfil.jpg">
-  <meta property="twitter:image:alt" content="Anthony Mejia - Developer Portfolio">
+  <meta property="twitter:image:alt" content="Anthony Mejia - Developer Portafolio">
   
   <!-- Additional SEO -->
   <link rel="canonical" href="https://anthony69x-portfolio.vercel.app/">
@@ -89,7 +89,7 @@ const optimizeHTML = () => {
   if (html.includes('<title>Vite + React</title>')) {
     html = html.replace(
       '<title>Vite + React</title>',
-      '<title>AnThony69x - Desarrollador Full Stack | Portfolio Profesional</title>'
+      '<title>AnThony69x - Desarrollador Full Stack | Portafolio Profesional</title>'
     );
   }
 
@@ -100,7 +100,7 @@ const optimizeHTML = () => {
 // ✅ Generar archivo de performance hints
 const generatePerformanceHints = () => {
   const hints = {
-    "AnThony69x Portfolio - Performance Report": {
+    "AnThony69x Portafolio - Performance Report": {
       "generated": new Date().toISOString(),
       "optimizations": {
         "compression": "Gzip + Brotli habilitado",
@@ -145,7 +145,7 @@ const main = () => {
 
     console.log('\n🎉 Optimización completada!');
     console.log('📊 SEO y performance mejorados');
-    console.log('🚀 Portfolio de AnThony69x listo para deploy!');
+    console.log('🚀 Portafolio de AnThony69x listo para deploy!');
 
   } catch (error) {
     console.error('❌ Error durante optimización:', error);

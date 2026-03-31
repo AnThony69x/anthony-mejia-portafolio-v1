@@ -6,14 +6,14 @@ const DOMAIN = 'https://anthony69x-portfolio.vercel.app'; // Cambia por tu domin
 const OUTPUT_PATH = path.join(__dirname, '../public/sitemap.xml');
 const ROBOTS_PATH = path.join(__dirname, '../public/robots.txt');
 
-// ✅ URLs de tu portfolio
+// ✅ URLs de tu portafolio
 const URLS = [
   {
     loc: '/',
     lastmod: '2025-08-28',
     changefreq: 'weekly',
     priority: '1.0',
-    title: 'AnThony69x - Desarrollador Full Stack Portfolio'
+    title: 'AnThony69x - Desarrollador Full Stack Portafolio'
   },
   {
     loc: '/#sobre-mi',
@@ -27,7 +27,7 @@ const URLS = [
     lastmod: '2025-08-28',
     changefreq: 'weekly',
     priority: '0.9',
-    title: 'Proyectos - Portfolio AnThony69x'
+    title: 'Proyectos - Portafolio AnThony69x'
   },
   {
     loc: '/#contacto',
@@ -38,7 +38,7 @@ const URLS = [
   }
 ];
 
-console.log('🗺️  Generando sitemap.xml para AnThony69x Portfolio...\n');
+console.log('🗺️  Generando sitemap.xml para AnThony69x Portafolio...\n');
 
 // ✅ Generar XML del sitemap
 const generateSitemap = () => {
@@ -63,7 +63,7 @@ const generateSitemap = () => {
 
 // ✅ Generar robots.txt
 const generateRobots = () => {
-  return `# AnThony69x Portfolio - Robots.txt
+  return `# AnThony69x Portafolio - Robots.txt
 # Generated: ${new Date().toISOString()}
 
 User-agent: *
@@ -120,7 +120,7 @@ const main = () => {
     console.log(`📅 Última actualización: 2025-08-28`)la;
     
     console.log('\n🎉 SEO files generados correctamente!');
-    console.log('🚀 Tu portfolio está optimizado para buscadores');
+    console.log('🚀 Tu portafolio está optimizado para buscadores');
     
   } catch (error) {
     console.error('❌ Error generando archivos SEO:', error);

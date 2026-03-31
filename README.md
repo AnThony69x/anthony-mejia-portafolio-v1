@@ -1,8 +1,8 @@
-# 🚀 Anthony Portfolio
+# 🚀 Anthony Portafolio
 
-> Portfolio profesional de **Anthony Mejia** - Desarrollador Full Stack especializado en tecnologías modernas.
+> Portafolio profesional de **Anthony Mejia** - Desarrollador Full Stack especializado en tecnologías modernas.
 
-![Portfolio Preview](./public/foto-perfil.jpg)
+![Portafolio Preview](./public/foto-perfil.jpg)
 
 ## ✨ Características
 
