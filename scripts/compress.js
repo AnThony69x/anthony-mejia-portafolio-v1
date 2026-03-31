@@ -16,7 +16,7 @@ const COMPRESSIONS = {
 
 const EXTENSIONS_TO_COMPRESS = ['.html', '.css', '.js', '.json', '.svg', '.ico'];
 
-console.log('🗜️  Iniciando compresión de archivos para AnThony69x Portfolio...\n');
+console.log('🗜️  Iniciando compresión de archivos para AnThony69x Portafolio...\n');
 
 // ✅ Función para comprimir archivos
 const compressFile = (filePath, compression, extension) => {
@@ -85,7 +85,7 @@ const main = async () => {
     
     console.log(`\n🎉 Compresión completada en ${endTime - startTime}ms`);
     console.log('📊 Archivos .gz y .br generados para mejor performance');
-    console.log('🚀 Portfolio de AnThony69x listo para producción!');
+    console.log('🚀 Portafolio de AnThony69x listo para producción!');
     
   } catch (error) {
     console.error('❌ Error durante la compresión:', error);

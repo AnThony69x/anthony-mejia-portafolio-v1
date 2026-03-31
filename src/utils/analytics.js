@@ -13,7 +13,7 @@ export const inicializarAnalytics = () => {
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', 'G-XXXXXXXXXX', {
-      page_title: 'Anthony Mejia Portfolio',
+      page_title: 'Anthony Mejia Portafolio',
       page_location: window.location.href
     });
 
@@ -25,7 +25,7 @@ export const inicializarAnalytics = () => {
 export const trackEvent = (eventName, parameters = {}) => {
   if (typeof window !== 'undefined' && window.gtag) {
     window.gtag('event', eventName, {
-      event_category: 'Portfolio Interaction',
+      event_category: 'Portafolio Interaction',
       event_label: parameters.label || '',
       value: parameters.value || 0,
       ...parameters
@@ -34,7 +34,7 @@ export const trackEvent = (eventName, parameters = {}) => {
   }
 };
 
-// ✅ Tracking específico para tu portfolio
+// ✅ Tracking específico para tu portafolio
 export const trackPageView = (pageName) => {
   trackEvent('page_view', {
     page_title: pageName,

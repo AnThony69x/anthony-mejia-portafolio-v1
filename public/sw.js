@@ -1,4 +1,4 @@
-const CACHE_NAME = 'anthony-portfolio-v1.3';
+const CACHE_NAME = 'anthony-portafolio-v1.3';
 const STATIC_CACHE = 'static-cache-v1.3';
 const DYNAMIC_CACHE = 'dynamic-cache-v1.3';
 

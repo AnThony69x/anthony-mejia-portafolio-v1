@@ -1,7 +1,7 @@
 # Configuración de EmailJS para Formulario de Contacto
 
 ## Descripción
-Esta guía te explica cómo configurar EmailJS para habilitar el envío automático de emails desde el formulario de contacto del portfolio.
+Esta guía te explica cómo configurar EmailJS para habilitar el envío automático de emails desde el formulario de contacto del portafolio.
 
 ## Pasos de Configuración
 
@@ -15,7 +15,7 @@ Esta guía te explica cómo configurar EmailJS para habilitar el envío automát
 2. Haz clic en **"Add New Service"**
 3. Selecciona tu proveedor de email (Gmail, Outlook, etc.)
 4. Configura la conexión con tu email
-5. **Anota el Service ID** (ej: `service_portfolio`)
+5. **Anota el Service ID** (ej: `service_portafolio`)
 
 ### 3. Crear Template de Email
 1. Ve a **"Email Templates"**
@@ -24,11 +24,11 @@ Esta guía te explica cómo configurar EmailJS para habilitar el envío automát
 
 #### Template de Email Recomendado:
 ```
-Subject: {{subject}} - Nuevo mensaje desde el portfolio
+Subject: {{subject}} - Nuevo mensaje desde el portafolio
 
 Hola Anthony,
 
-Has recibido un nuevo mensaje desde tu portfolio:
+Has recibido un nuevo mensaje desde tu portafolio:
 
 Nombre: {{from_name}}
 Email: {{from_email}}
@@ -38,7 +38,7 @@ Mensaje:
 {{message}}
 
 ---
-Este email fue enviado automáticamente desde tu portfolio.
+Este email fue enviado automáticamente desde tu portafolio.
 Puedes responder directamente a: {{reply_to}}
 ```
 

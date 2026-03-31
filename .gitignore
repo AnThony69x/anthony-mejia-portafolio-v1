@@ -108,7 +108,7 @@ dist
 # TernJS port file
 .tern-port
 
-# AnThony69x Portfolio specific
+# AnThony69x Portafolio specific
 dist-ssr
 *.local
 .vercel
