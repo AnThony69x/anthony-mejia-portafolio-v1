@@ -11,30 +11,41 @@ const Proyectos = () => {
 
   // Datos de proyectos
   const proyectos = [
-    // {
-    //   id: 1,
-    //   titulo: "E-commerce Moderno",
-    //   descripcion: "Plataforma de comercio electrónico con carrito de compras, pagos integrados y panel de administración completo.",
-    //   imagen: "/proyecto1.jpg",
-    //   tecnologias: ["React", "Node.js", "MongoDB", "Tailwind"],
-    //   categoria: "fullstack",
-    //   githubUrl: "https://github.com/AnThony69x/ecommerce-project",
-    //   liveUrl: "https://ecommerce-demo.vercel.app",
-    //   destacado: true
-    // },
+{
+  id: 1,
+  titulo: "Academia Online",
+  descripcion: "Plataforma completa de cursos en línea con sistema de suscripciones, dashboards avanzados, certificados automáticos y gestión integral para estudiantes, instructores y administradores.",
+  imagen: "/proyecto1.jpg",
+  tecnologias: ["React", "TypeScript", "Supabase", "Edge Functions", "Stripe", "PostgreSQL", "Tailwind"],
+  categoria: "fullstack",
+  githubUrl: "https://github.com/AnThony69x/arquitectura-learn-pro.git",
+  liveUrl: "https://arquitectura-learn-pro.vercel.app/",
+  destacado: true
+},
 {
   id: 2,
-  titulo: "Sistema de Visualización de Datos Spotify",
-  descripcion: "Sistema de análisis y visualización de datos musicales con 10 tipos de gráficos profesionales, búsqueda de canciones, comparador de artistas y exportación PNG/HTML.",
+  titulo: "EduIA – Data Storytelling",
+  descripcion: "Experiencia interactiva que transforma datos sobre el uso de IA en estudiantes en una narrativa visual inmersiva, combinando gráficos dinámicos, animaciones cinematográficas y storytelling basado en datos reales.",
   imagen: "/proyecto2.jpg",
-  tecnologias: ["Python", "Pandas", "Matplotlib", "Seaborn", "Plotly"],
-  categoria: "data-science",
-  githubUrl: "https://github.com/AnThony69x/data-visualizacion",
-  liveUrl: null,
+  tecnologias: ["React", "Vite", "D3.js", "GSAP", "ScrollTrigger", "Lenis", "CSS"],
+  categoria: "frontend",
+  githubUrl: "https://github.com/AnThony69x/EduIa-Visualizacion.git",
+  liveUrl: "https://edu-ia-visualizacion.vercel.app/",
   destacado: true
 },
 {
   id: 3,
+  titulo: "PrediRuta",
+  descripcion: "Sistema web inteligente que predice la congestión vehicular y recomienda rutas óptimas en tiempo real mediante modelos de Machine Learning, integrando mapas interactivos y arquitectura basada en microservicios.",
+  imagen: "/proyecto3.jpg",
+  tecnologias: ["Next.js", "TailwindCSS", "FastAPI", "Python", "TensorFlow", "Supabase", "PostgreSQL", "Docker"],
+  categoria: "fullstack",
+  githubUrl: "https://github.com/AnThony69x/PrediRuta.git",
+  liveUrl: "https://predi-ruta.vercel.app/",
+  destacado: true
+},
+{
+  id: 4,
   titulo: "TaskFlow - Gestión de Tareas",
   descripcion: "Aplicación completa de gestión de tareas con funcionalidades avanzadas: drag & drop intuitivo, categorías personalizables, filtros inteligentes y sincronización en tiempo real entre dispositivos.",
   imagen: "/proyecto4.jpg",
@@ -42,10 +53,10 @@ const Proyectos = () => {
   categoria: "fullstack",
   githubUrl: "https://github.com/AnThony69x/GestionTareas",
   liveUrl: "https://gestiontareas-252537812380.europe-west1.run.app/",
-  destacado: true
+  destacado: false
 },
 {
-  id: 4,
+  id: 5,
   titulo: "Geotípico - Plataforma de Restaurantes",
   descripcion: "Aplicación web avanzada para descubrimiento y gestión de restaurantes con geolocalización precisa, sistema de reservas, reseñas de usuarios y mapas interactivos.",
   imagen: "/proyecto5.jpg",
@@ -53,13 +64,13 @@ const Proyectos = () => {
   categoria: "fullstack",
   githubUrl: "https://github.com/AnThony69x/Geotipico-Restaurantes",
   liveUrl: "https://geotipico.vercel.app/",
-  destacado: true
+  destacado: false
 },
 {
-  id: 5,
+  id: 6,
   titulo: "API REST Enterprise",
   descripcion: "API robusta y escalable con arquitectura empresarial: autenticación JWT segura, documentación Swagger automática, sistema de roles granular y manejo avanzado de errores.",
-  imagen: "/proyecto3.jpg",
+  imagen: "/proyecto6.jpg",
   tecnologias: ["Next.js", "SQLite", "JavaScript", "TypeORM"],
   categoria: "backend",
   githubUrl: "https://github.com/AnThony69x/Api-Rest",
@@ -67,16 +78,16 @@ const Proyectos = () => {
   destacado: false
 },
 {
-  id: 6,
-  titulo: "Portafolio Profesional",
-  descripcion: "Sitio web personal moderno y responsive con animaciones fluidas, tema oscuro/claro, optimización SEO y experiencia de usuario excepcional en todos los dispositivos.",
-  imagen: "/proyecto6.jpg",
-  tecnologias: ["React", "Vite", "JavaScript", "CSS"],
-  categoria: "frontend",
-  githubUrl: "https://github.com/AnThony69x/mi-portafolio",
-  liveUrl: "https://anthony-mejia-portafolio-v1.vercel.app/",
+  id: 7,
+  titulo: "WatchHub",
+  descripcion: "Plataforma de streaming moderna con autenticación avanzada (2FA), gestión de suscripciones, sistema de pagos y catálogo personalizado, ofreciendo una experiencia completa tipo Netflix con enfoque en seguridad y escalabilidad.",
+  imagen: "/proyecto7.jpg",
+  tecnologias: ["React", "TypeScript", "Supabase", "PostgreSQL", "Tailwind", "Vite", "shadcn/ui"],
+  categoria: "fullstack",
+  githubUrl: "https://github.com/CarlosJChileS/ModeladoWatchub",
+  liveUrl: "https://watchhub-demo.vercel.app",
   destacado: false
-}
+},
   ];
 
   // Filtros de categorías
