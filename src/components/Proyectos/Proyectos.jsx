@@ -13,28 +13,6 @@ const Proyectos = () => {
   const proyectos = [
 {
   id: 1,
-  titulo: "Academia Online",
-  descripcion: "Plataforma completa de cursos en línea con sistema de suscripciones, dashboards avanzados, certificados automáticos y gestión integral para estudiantes, instructores y administradores.",
-  imagen: "/proyecto1.jpg",
-  tecnologias: ["React", "TypeScript", "Supabase", "Edge Functions", "Stripe", "PostgreSQL", "Tailwind"],
-  categoria: "fullstack",
-  githubUrl: "https://github.com/AnThony69x/arquitectura-learn-pro.git",
-  liveUrl: "https://arquitectura-learn-pro.vercel.app/",
-  destacado: true
-},
-{
-  id: 2,
-  titulo: "EduIA – Data Storytelling",
-  descripcion: "Experiencia interactiva que transforma datos sobre el uso de IA en estudiantes en una narrativa visual inmersiva, combinando gráficos dinámicos, animaciones cinematográficas y storytelling basado en datos reales.",
-  imagen: "/proyecto2.jpg",
-  tecnologias: ["React", "Vite", "D3.js", "GSAP", "ScrollTrigger", "Lenis", "CSS"],
-  categoria: "frontend",
-  githubUrl: "https://github.com/AnThony69x/EduIa-Visualizacion.git",
-  liveUrl: "https://edu-ia-visualizacion.vercel.app/",
-  destacado: true
-},
-{
-  id: 3,
   titulo: "PrediRuta",
   descripcion: "Sistema web inteligente que predice la congestión vehicular y recomienda rutas óptimas en tiempo real mediante modelos de Machine Learning, integrando mapas interactivos y arquitectura basada en microservicios.",
   imagen: "/proyecto3.jpg",
@@ -42,6 +20,28 @@ const Proyectos = () => {
   categoria: "fullstack",
   githubUrl: "https://github.com/AnThony69x/PrediRuta.git",
   liveUrl: "https://predi-ruta.vercel.app/",
+  destacado: true
+},
+{
+  id: 2,
+  titulo: "Geotípico - Plataforma de Restaurantes",
+  descripcion: "Aplicación web avanzada para descubrimiento y gestión de restaurantes con geolocalización precisa, sistema de reservas, reseñas de usuarios y mapas interactivos.",
+  imagen: "/proyecto5.jpg",
+  tecnologias: ["Next.js", "MongoDB", "Tailwind", "JavaScript"],
+  categoria: "fullstack",
+  githubUrl: "https://github.com/AnThony69x/Geotipico-Restaurantes",
+  liveUrl: "https://geotipico.vercel.app/",
+  destacado: true
+},
+{
+  id: 3,
+  titulo: "EduIA – Data Storytelling",
+  descripcion: "Experiencia interactiva que transforma datos sobre el uso de IA en estudiantes en una narrativa visual inmersiva, combinando gráficos dinámicos, animaciones cinematográficas y storytelling basado en datos reales.",
+  imagen: "/proyecto2.jpg",
+  tecnologias: ["React", "Vite", "D3.js", "GSAP", "ScrollTrigger", "Lenis", "CSS"],
+  categoria: "frontend",
+  githubUrl: "https://github.com/AnThony69x/EduIa-Visualizacion.git",
+  liveUrl: "https://edu-ia-visualizacion.vercel.app/",
   destacado: true
 },
 {
@@ -57,17 +57,6 @@ const Proyectos = () => {
 },
 {
   id: 5,
-  titulo: "Geotípico - Plataforma de Restaurantes",
-  descripcion: "Aplicación web avanzada para descubrimiento y gestión de restaurantes con geolocalización precisa, sistema de reservas, reseñas de usuarios y mapas interactivos.",
-  imagen: "/proyecto5.jpg",
-  tecnologias: ["Next.js", "MongoDB", "Tailwind", "JavaScript"],
-  categoria: "fullstack",
-  githubUrl: "https://github.com/AnThony69x/Geotipico-Restaurantes",
-  liveUrl: "https://geotipico.vercel.app/",
-  destacado: false
-},
-{
-  id: 6,
   titulo: "API REST Enterprise",
   descripcion: "API robusta y escalable con arquitectura empresarial: autenticación JWT segura, documentación Swagger automática, sistema de roles granular y manejo avanzado de errores.",
   imagen: "/proyecto6.jpg",
@@ -75,6 +64,17 @@ const Proyectos = () => {
   categoria: "backend",
   githubUrl: "https://github.com/AnThony69x/Api-Rest",
   liveUrl: null,
+  destacado: false
+},
+{
+  id: 6,
+  titulo: "Academia Online",
+  descripcion: "Plataforma completa de cursos en línea con sistema de suscripciones, dashboards avanzados, certificados automáticos y gestión integral para estudiantes, instructores y administradores.",
+  imagen: "/proyecto1.jpg",
+  tecnologias: ["React", "TypeScript", "Supabase", "Edge Functions", "Stripe", "PostgreSQL", "Tailwind"],
+  categoria: "fullstack",
+  githubUrl: "https://github.com/AnThony69x/arquitectura-learn-pro.git",
+  liveUrl: "https://arquitectura-learn-pro.vercel.app/",
   destacado: false
 },
 {
