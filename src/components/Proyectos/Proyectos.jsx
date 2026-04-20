@@ -52,7 +52,7 @@ const Proyectos = () => {
   tecnologias: ["Vue", "Vite", "Express.js", "Supabase"],
   categoria: "fullstack",
   githubUrl: "https://github.com/AnThony69x/GestionTareas",
-  liveUrl: "https://gestiontareas-252537812380.europe-west1.run.app/",
+  liveUrl: "https://gestion-tareas-rose.vercel.app/",
   destacado: false
 },
 {
