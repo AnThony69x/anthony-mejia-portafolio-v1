@@ -68,6 +68,17 @@ const Proyectos = () => {
 },
 {
   id: 6,
+  titulo: "Corredor Ecológico - App de Observación de Aves",
+  descripcion: "Aplicación móvil desarrollada en Flutter para la observación de aves y gestión de tours ecológicos, con geolocalización en tiempo real, captura de fotos y sonidos, estadísticas de observaciones y soporte offline mediante Supabase como backend.",
+  imagen: "/proyecto9.jpg",
+  tecnologias: ["Flutter", "Dart", "Supabase", "Riverpod", "Hive", "GoRouter"],
+  categoria: "mobile",
+  githubUrl: "https://github.com/AnThony69x/app_corredor_ecologico.git",
+  liveUrl: "",
+  destacado: false
+},
+{
+  id: 7,
   titulo: "API REST Enterprise",
   descripcion: "API robusta y escalable con arquitectura empresarial: autenticación JWT segura, documentación Swagger automática, sistema de roles granular y manejo avanzado de errores.",
   imagen: "/proyecto6.jpg",
@@ -78,7 +89,7 @@ const Proyectos = () => {
   destacado: false
 },
 {
-  id: 7,
+  id: 8,
   titulo: "Academia Online",
   descripcion: "Plataforma completa de cursos en línea con sistema de suscripciones, dashboards avanzados, certificados automáticos y gestión integral para estudiantes, instructores y administradores.",
   imagen: "/proyecto1.jpg",
@@ -89,7 +100,7 @@ const Proyectos = () => {
   destacado: false
 },
 {
-  id: 8,
+  id: 9,
   titulo: "WatchHub",
   descripcion: "Plataforma de streaming moderna con autenticación avanzada (2FA), gestión de suscripciones, sistema de pagos y catálogo personalizado, ofreciendo una experiencia completa tipo Netflix con enfoque en seguridad y escalabilidad.",
   imagen: "/proyecto7.jpg",
@@ -105,32 +116,76 @@ const Proyectos = () => {
   const categorias = [
     { id: "todos", label: "Todos", count: proyectos.length },
     { id: "fullstack", label: "Full Stack", count: proyectos.filter(p => p.categoria === "fullstack").length },
+        { id: "mobile", label: "Mobile", count: proyectos.filter(p => p.categoria === "mobile").length },
     { id: "frontend", label: "Frontend", count: proyectos.filter(p => p.categoria === "frontend").length },
     { id: "backend", label: "Backend", count: proyectos.filter(p => p.categoria === "backend").length },
-    { id: "mobile", label: "Mobile", count: proyectos.filter(p => p.categoria === "mobile").length }
   ];
 
 // Función para obtener el icono de la tecnología
 const obtenerIconoTech = (tech) => {
-  const iconos = {
-    "React": <FaReact />,
-    "Node.js": <FaNodeJs />,
-    "MongoDB": <SiMongodb />,
-    "PostgreSQL": <SiPostgresql />,
-    "Tailwind": <SiTailwindcss />,
-    "Next.js": <SiNextdotjs />,
-    "JavaScript": <FaJs />,
-    "HTML": <FaHtml5 />,
-    "CSS": <FaCss3Alt />,
-    // AGREGADOS PARA TUS PROYECTOS
-    "Vue": <FaReact style={{color: "#4FC08D"}} />, 
-    "Vite": <SiVite />,
-    "Express.js": <FaNodeJs style={{color: "#68A063"}} />,
-    "Supabase": <FaDatabase style={{color: "#3ECF8E"}} />,
-    "SQLite": <SiSqlite />,
-    "TypeORM": <FaDatabase style={{color: "#E83524"}} />
+  const coloresTech = {
+    "React": "#61DAFB",
+    "Node.js": "#68A063",
+    "MongoDB": "#47A248",
+    "PostgreSQL": "#336791",
+    "Tailwind": "#06B6D4",
+    "TailwindCSS": "#06B6D4",
+    "Next.js": "#F8FAFC",
+    "JavaScript": "#F7DF1E",
+    "HTML": "#E34F26",
+    "CSS": "#1572B6",
+    "Vue": "#42B883",
+    "Vite": "#646CFF",
+    "Express.js": "#8FA3B0",
+    "Supabase": "#3ECF8E",
+    "SQLite": "#0F80CC",
+    "TypeORM": "#E83524",
+    "FastAPI": "#009688",
+    "Python": "#3776AB",
+    "TensorFlow": "#FF6F00",
+    "Docker": "#2496ED",
+    "D3.js": "#F68E56",
+    "GSAP": "#88CE02",
+    "ScrollTrigger": "#84CC16",
+    "Lenis": "#38BDF8",
+    "Kotlin": "#7F52FF",
+    "Jetpack Compose": "#4285F4",
+    "Firebase": "#FFCA28",
+    "Firestore": "#FFA000",
+    "Firebase Auth": "#FB8C00",
+    "Firebase Storage": "#F57C00",
+    "Material3": "#6750A4",
+    "Flutter": "#02569B",
+    "Dart": "#0175C2",
+    "Riverpod": "#4E7FFF",
+    "Hive": "#F9A826",
+    "GoRouter": "#00ADD8",
+    "TypeScript": "#3178C6",
+    "Edge Functions": "#22C55E",
+    "Stripe": "#635BFF",
+    "shadcn/ui": "#E2E8F0"
   };
-  return iconos[tech] || <FaDatabase />;
+
+  const iconos = {
+    "React": <FaReact style={{ color: coloresTech["React"] }} />,
+    "Node.js": <FaNodeJs style={{ color: coloresTech["Node.js"] }} />,
+    "MongoDB": <SiMongodb style={{ color: coloresTech["MongoDB"] }} />,
+    "PostgreSQL": <SiPostgresql style={{ color: coloresTech["PostgreSQL"] }} />,
+    "Tailwind": <SiTailwindcss style={{ color: coloresTech["Tailwind"] }} />,
+    "TailwindCSS": <SiTailwindcss style={{ color: coloresTech["TailwindCSS"] }} />,
+    "Next.js": <SiNextdotjs style={{ color: coloresTech["Next.js"] }} />,
+    "JavaScript": <FaJs style={{ color: coloresTech["JavaScript"] }} />,
+    "HTML": <FaHtml5 style={{ color: coloresTech["HTML"] }} />,
+    "CSS": <FaCss3Alt style={{ color: coloresTech["CSS"] }} />,
+    // AGREGADOS PARA TUS PROYECTOS
+    "Vue": <FaReact style={{ color: coloresTech["Vue"] }} />,
+    "Vite": <SiVite style={{ color: coloresTech["Vite"] }} />,
+    "Express.js": <FaNodeJs style={{ color: coloresTech["Express.js"] }} />,
+    "Supabase": <FaDatabase style={{ color: coloresTech["Supabase"] }} />,
+    "SQLite": <SiSqlite style={{ color: coloresTech["SQLite"] }} />,
+    "TypeORM": <FaDatabase style={{ color: coloresTech["TypeORM"] }} />
+  };
+  return iconos[tech] || <FaDatabase style={{ color: coloresTech[tech] || "#94A3B8" }} />;
 };
 
   // Filtrar proyectos
