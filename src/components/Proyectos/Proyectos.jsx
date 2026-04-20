@@ -46,6 +46,17 @@ const Proyectos = () => {
 },
 {
   id: 4,
+  titulo: "Sabor Foráneo - App de Recetas",
+  descripcion: "Aplicación móvil de recetas ecuatorianas e internacionales con autenticación segura, gestión de usuarios, favoritos sincronizados y panel administrativo, utilizando Firebase como backend completo.",
+  imagen: "/proyecto8.jpg",
+  tecnologias: ["Kotlin", "Jetpack Compose", "Firebase", "Firestore", "Firebase Auth", "Firebase Storage", "Material3"],
+  categoria: "mobile",
+  githubUrl: "https://github.com/AnThony69x/SaborForaneo",
+  liveUrl: "",
+  destacado: true
+},
+{
+  id: 5,
   titulo: "TaskFlow - Gestión de Tareas",
   descripcion: "Aplicación completa de gestión de tareas con funcionalidades avanzadas: drag & drop intuitivo, categorías personalizables, filtros inteligentes y sincronización en tiempo real entre dispositivos.",
   imagen: "/proyecto4.jpg",
@@ -56,7 +67,7 @@ const Proyectos = () => {
   destacado: false
 },
 {
-  id: 5,
+  id: 6,
   titulo: "API REST Enterprise",
   descripcion: "API robusta y escalable con arquitectura empresarial: autenticación JWT segura, documentación Swagger automática, sistema de roles granular y manejo avanzado de errores.",
   imagen: "/proyecto6.jpg",
@@ -67,7 +78,7 @@ const Proyectos = () => {
   destacado: false
 },
 {
-  id: 6,
+  id: 7,
   titulo: "Academia Online",
   descripcion: "Plataforma completa de cursos en línea con sistema de suscripciones, dashboards avanzados, certificados automáticos y gestión integral para estudiantes, instructores y administradores.",
   imagen: "/proyecto1.jpg",
@@ -78,7 +89,7 @@ const Proyectos = () => {
   destacado: false
 },
 {
-  id: 7,
+  id: 8,
   titulo: "WatchHub",
   descripcion: "Plataforma de streaming moderna con autenticación avanzada (2FA), gestión de suscripciones, sistema de pagos y catálogo personalizado, ofreciendo una experiencia completa tipo Netflix con enfoque en seguridad y escalabilidad.",
   imagen: "/proyecto7.jpg",
@@ -95,7 +106,8 @@ const Proyectos = () => {
     { id: "todos", label: "Todos", count: proyectos.length },
     { id: "fullstack", label: "Full Stack", count: proyectos.filter(p => p.categoria === "fullstack").length },
     { id: "frontend", label: "Frontend", count: proyectos.filter(p => p.categoria === "frontend").length },
-    { id: "backend", label: "Backend", count: proyectos.filter(p => p.categoria === "backend").length }
+    { id: "backend", label: "Backend", count: proyectos.filter(p => p.categoria === "backend").length },
+    { id: "mobile", label: "Mobile", count: proyectos.filter(p => p.categoria === "mobile").length }
   ];
 
 // Función para obtener el icono de la tecnología
@@ -178,7 +190,9 @@ const obtenerIconoTech = (tech) => {
                 <img 
                   src={proyecto.imagen} 
                   alt={`Captura de pantalla del proyecto ${proyecto.titulo}`}
-                  className={styles.imagenProyecto}
+                  className={`${styles.imagenProyecto} ${
+                    proyecto.categoria === "mobile" ? styles.imagenMobile : ""
+                  }`}
                   loading="lazy"
                 />
                 <div className={styles.overlay}>

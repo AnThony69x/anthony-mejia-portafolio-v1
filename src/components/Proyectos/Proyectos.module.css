@@ -277,6 +277,13 @@
   opacity: 0.9;
 }
 
+.imagenMobile {
+  object-fit: contain;
+  object-position: center;
+  padding: 0.6rem;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
 .proyectoCard:hover .imagenProyecto {
   transform: scale(1.05);
   opacity: 1;
