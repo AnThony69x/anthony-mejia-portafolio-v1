@@ -18,7 +18,7 @@ const Proyectos = () => {
   imagen: "/proyecto3.jpg",
   tecnologias: ["Next.js", "TailwindCSS", "FastAPI", "Python", "TensorFlow", "Supabase", "PostgreSQL", "Docker"],
   categoria: "fullstack",
-  githubUrl: "https://github.com/AnThony69x/PrediRuta.git",
+  githubUrl: "https://github.com/AnThony69x/PrediRuta",
   liveUrl: "https://predi-ruta.vercel.app/",
   destacado: true
 },
@@ -40,7 +40,7 @@ const Proyectos = () => {
   imagen: "/proyecto2.jpg",
   tecnologias: ["React", "Vite", "D3.js", "GSAP", "ScrollTrigger", "Lenis", "CSS"],
   categoria: "frontend",
-  githubUrl: "https://github.com/AnThony69x/EduIa-Visualizacion.git",
+  githubUrl: "https://github.com/AnThony69x/EduIa-Visualizacion",
   liveUrl: "https://edu-ia-visualizacion.vercel.app/",
   destacado: true
 },
@@ -73,7 +73,7 @@ const Proyectos = () => {
   imagen: "/proyecto9.jpg",
   tecnologias: ["Flutter", "Dart", "Supabase", "Riverpod", "Hive", "GoRouter"],
   categoria: "mobile",
-  githubUrl: "https://github.com/AnThony69x/app_corredor_ecologico.git",
+  githubUrl: "https://github.com/AnThony69x/app_corredor_ecologico",
   liveUrl: "",
   destacado: false
 },
@@ -95,7 +95,7 @@ const Proyectos = () => {
   imagen: "/proyecto1.jpg",
   tecnologias: ["React", "TypeScript", "Supabase", "Edge Functions", "Stripe", "PostgreSQL", "Tailwind"],
   categoria: "fullstack",
-  githubUrl: "https://github.com/AnThony69x/arquitectura-learn-pro.git",
+  githubUrl: "https://github.com/AnThony69x/arquitectura-learn-pro",
   liveUrl: "https://arquitectura-learn-pro.vercel.app/",
   destacado: false
 },
@@ -110,15 +110,37 @@ const Proyectos = () => {
   liveUrl: "https://watchhub-demo.vercel.app",
   destacado: false
 },
+{
+  id: 10,
+  titulo: "MediCost-IA",
+  descripcion:"Sistema de gestión de costos de medicamentos con IA para recomendaciones precisas y análisis de precios en tiempo real, integrando APIs y fuentes de datos confiables para ofrecer información actualizada y herramientas de optimización de gastos médicos.",
+  imagen: "/proyecto10.jpg",
+  tecnologias: ["React","Vite","Python", "FastAPI", "PostgreSQL", "Docker", "Linux", "Git", "GitHub"],
+  categoria: "frontend",
+  githubUrl: "https://github.com/AnThony69x/MediCost-AI",
+  liveUrl: "https://medi-cost-ai-uma3.vercel.app/",
+  destacado: false
+},
+{
+  id: 11,
+  titulo:"Spotify Data Visualizer - Setup",
+  descripcion:"Visualizador de datos de Spotify con autenticación, exploración de canciones, gráficos de popularidad y análisis de géneros musicales, utilizando la API de Spotify y React para una experiencia interactiva y educativa.",
+  imagen: "/proyecto11.jpg",
+  tecnologias: ["React","Vite","Python", "FastAPI", "PostgreSQL", "Docker", "Linux", "Git", "GitHub"],
+  categoria: "data-visualization",
+  githubUrl: "https://github.com/AnThony69x/data-visualizacion-seaborn",
+  destacado: false
+}
   ];
 
   // Filtros de categorías
   const categorias = [
     { id: "todos", label: "Todos", count: proyectos.length },
     { id: "fullstack", label: "Full Stack", count: proyectos.filter(p => p.categoria === "fullstack").length },
-        { id: "mobile", label: "Mobile", count: proyectos.filter(p => p.categoria === "mobile").length },
+    { id: "mobile", label: "Mobile", count: proyectos.filter(p => p.categoria === "mobile").length },
     { id: "frontend", label: "Frontend", count: proyectos.filter(p => p.categoria === "frontend").length },
     { id: "backend", label: "Backend", count: proyectos.filter(p => p.categoria === "backend").length },
+    { id: "data-visualization", label: "Data Visualization", count: proyectos.filter(p => p.categoria === "data-visualization").length },
   ];
 
 // Función para obtener el icono de la tecnología
