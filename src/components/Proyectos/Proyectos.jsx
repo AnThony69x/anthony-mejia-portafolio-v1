@@ -115,7 +115,7 @@ const Proyectos = () => {
   titulo: "MediCost-IA",
   descripcion:"Sistema de gestión de costos de medicamentos con IA para recomendaciones precisas y análisis de precios en tiempo real, integrando APIs y fuentes de datos confiables para ofrecer información actualizada y herramientas de optimización de gastos médicos.",
   imagen: "/proyecto10.jpg",
-  tecnologias: ["React","Vite","Python", "FastAPI", "PostgreSQL", "Docker", "Linux", "Git", "GitHub"],
+  tecnologias: ["React","Vite","Python", "FastAPI", "PostgreSQL", "Linux", "Git", "GitHub"],
   categoria: "frontend",
   githubUrl: "https://github.com/AnThony69x/MediCost-AI",
   liveUrl: "https://medi-cost-ai-uma3.vercel.app/",
@@ -126,7 +126,7 @@ const Proyectos = () => {
   titulo:"Spotify Data Visualizer - Setup",
   descripcion:"Visualizador de datos de Spotify con autenticación, exploración de canciones, gráficos de popularidad y análisis de géneros musicales, utilizando la API de Spotify y React para una experiencia interactiva y educativa.",
   imagen: "/proyecto11.jpg",
-  tecnologias: ["React","Vite","Python", "FastAPI", "PostgreSQL", "Docker", "Linux", "Git", "GitHub"],
+  tecnologias: ["React","Vite","Python", "FastAPI", "Linux"],
   categoria: "data-visualization",
   githubUrl: "https://github.com/AnThony69x/data-visualizacion-seaborn",
   destacado: false
@@ -185,7 +185,10 @@ const obtenerIconoTech = (tech) => {
     "TypeScript": "#3178C6",
     "Edge Functions": "#22C55E",
     "Stripe": "#635BFF",
-    "shadcn/ui": "#E2E8F0"
+    "shadcn/ui": "#E2E8F0",
+    "Linux": "#000000",
+    "Git": "#F05032",
+    "GitHub": "#181717"
   };
 
   const iconos = {
@@ -206,6 +209,7 @@ const obtenerIconoTech = (tech) => {
     "Supabase": <FaDatabase style={{ color: coloresTech["Supabase"] }} />,
     "SQLite": <SiSqlite style={{ color: coloresTech["SQLite"] }} />,
     "TypeORM": <FaDatabase style={{ color: coloresTech["TypeORM"] }} />
+    
   };
   return iconos[tech] || <FaDatabase style={{ color: coloresTech[tech] || "#94A3B8" }} />;
 };
