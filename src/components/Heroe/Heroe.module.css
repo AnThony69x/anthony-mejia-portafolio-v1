@@ -166,7 +166,7 @@
 
 .imagenWrapper {
   position: relative;
-  width: min(100%, 340px);
+  width: min(100%, 700px);
   aspect-ratio: 1;
 }
 
@@ -304,7 +304,7 @@
   }
 
   .imagenWrapper {
-    width: min(260px, 70vw);
+    width: min(304px, 85vw);
   }
 }
 
