@@ -52,7 +52,7 @@ const SobreMi = () => {
     {
       titulo: "¿Quién Soy?",
       icono: <FaUser />,
-      contenido: "Soy Anthony Mejía, Estudiante de Ingeniería de Software y Desarrollador Web altamente motivado con sólidos conocimientos en desarrollo de software y diseño de interfaces web.",
+      contenido: "Soy Anthony Mejia, Estudiante de Ingeniería de Software y Desarrollador Web altamente motivado con sólidos conocimientos en desarrollo de software y diseño de interfaces web.",
       color: "#3b82f6"
     },
     {

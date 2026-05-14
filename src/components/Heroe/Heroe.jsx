@@ -1,7 +1,9 @@
 import React from "react";
-import { FaReact, FaJs, FaLaravel } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import { MdOutlineWavingHand } from "react-icons/md";
 import { SiPostgresql } from "react-icons/si";
+import { SiNestjs } from "react-icons/si";
+import { SiPython } from "react-icons/si";
 import EnlacesSociales from "../EnlacesSociales/EnlacesSociales";
 import styles from "./Heroe.module.css";
 
@@ -16,8 +18,8 @@ const Heroe = () => {
   // Iconos flotantes de tecnologías 
   const iconosFlotantes = [
     { icono: <FaReact />, posicion: { top: "15%", left: "10%" } },
-    { icono: <FaLaravel />, posicion: { top: "10%", right: "15%" } },
-    { icono: <FaJs />, posicion: { bottom: "25%", right: "10%" } },
+    { icono: <SiNestjs />, posicion: { top: "10%", right: "15%" } },
+    { icono: <SiPython />, posicion: { bottom: "25%", right: "10%" } },
     { icono: <SiPostgresql />, posicion: { bottom: "20%", left: "8%" } },
   ];
 
@@ -29,7 +31,7 @@ const Heroe = () => {
           <div className={styles.ladoTexto}>
             <div className={styles.saludoContainer}>
               <h1 className={styles.saludo}>
-                Hola, soy Anthony Mejia
+                <span className={styles.saludoTexto}>Anthony Axel Mejia Ordoñez</span>
                 <MdOutlineWavingHand className={styles.saludoIcono} aria-hidden />
               </h1>
               <div className={styles.lineaDecorariva}></div>
@@ -37,10 +39,21 @@ const Heroe = () => {
 
             <h2 className={styles.titulo}>Estudiante de Ingeniería de Software</h2>
 
+            <h3 className={styles.subtitulo}>
+              <span className={styles.subtituloParte}>Full Stack Developer</span>
+              <span className={styles.subtituloSep} aria-hidden="true">
+                {" "}
+                <span className={styles.subtituloAmp}>&</span>{" "}
+              </span>
+              <span className={styles.subtituloParte}>Data Scientist</span>
+            </h3>
+
             <p className={styles.descripcion}>
-              Creo aplicaciones web modernas y responsivas con interfaces limpias y
-              experiencias de usuario fluidas, combinando diseño y código para crear
-              experiencias que se sientan intuitivas, rápidas y agradables de usar.
+              Diseño y desarrollo productos web{" "} <strong>Full Stack</strong> con interfaces limpias,
+              buen rendimiento y experiencias de usuario cuidadas. Como{" "}
+              <strong>Data Scientist</strong>, también trabajo con datos análisis,
+              visualización y modelos para convertir información en decisiones y
+              productos más útiles.
             </p>
 
             <div className={styles.seccionSocial}>

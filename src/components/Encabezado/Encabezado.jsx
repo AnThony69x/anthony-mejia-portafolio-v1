@@ -206,12 +206,7 @@ const Encabezado = () => {
           </button>
         </div>
 
-        <div
-          className={styles.scrollProgress}
-          style={{
-            background: `linear-gradient(90deg, ${obtenerColorActivo()}, ${obtenerColorActivo()}99)`,
-          }}
-        />
+        <div className={styles.scrollProgress} />
       </header>
       {menuAbierto && (
         <div

@@ -23,7 +23,8 @@
   isolation: isolate;
   min-height: 100vh;
   min-height: 100dvh;
-  padding: clamp(5.5rem, 11vh, 7.5rem) 0 clamp(3rem, 6vh, 5rem);
+  /* Más aire bajo el header fijo para que el saludo no quede pegado arriba */
+  padding: clamp(6.75rem, 14vh, 9rem) 0 clamp(3rem, 7vh, 5.5rem);
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -48,28 +49,43 @@
 .ladoTexto {
   display: flex;
   flex-direction: column;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
+  gap: clamp(0.85rem, 2.2vw, 1.35rem);
 }
 
 .saludoContainer {
-  margin-bottom: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin: 0 0 0.35rem;
+  padding-top: 0.35rem;
 }
 
 .saludo {
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  column-gap: 0.45rem;
+  row-gap: 0.35rem;
+  font-size: clamp(1.32rem, 3.25vw, 2.1rem);
   font-weight: 800;
-  line-height: 1.15;
+  line-height: 1.3;
   color: var(--text-primary, #f1f5f9);
-  margin: 0 0 0.5rem;
-  letter-spacing: -0.02em;
+  margin: 0;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+}
+
+.saludoTexto {
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: break-word;
 }
 
 .saludoIcono {
-  display: inline-block;
-  margin-left: 0.35rem;
-  vertical-align: middle;
-  width: 0.95em;
-  height: 0.95em;
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
   color: #fbbf24;
   animation: wave 2.2s ease-in-out infinite;
 }
@@ -101,9 +117,45 @@
 .titulo {
   font-size: clamp(1.15rem, 2.8vw, 1.5rem);
   font-weight: 600;
-  color: #3b82f6;
-  margin: 0;
+  color: var(--accent-color, #3b82f6);
+  margin: 0 0 0.2rem;
   line-height: 1.35;
+}
+
+/* Rol secundario: tamaño acorde al hero (anula estilos globales de h3) */
+.subtitulo {
+  margin: 0;
+  max-width: 36rem;
+  font-size: clamp(0.95rem, 2.05vw, 1.125rem);
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+  color: var(--text-secondary, #94a3b8);
+}
+
+.subtituloParte {
+  color: var(--text-dark-secondary, #cbd5e1);
+}
+
+.subtituloSep {
+  font-weight: 500;
+  color: var(--text-muted, #64748b);
+}
+
+.subtituloAmp {
+  display: inline-block;
+  padding: 0 0.12em;
+  font-weight: 700;
+  font-style: italic;
+  color: transparent;
+  background: linear-gradient(
+    120deg,
+    var(--accent-light, #60a5fa),
+    var(--accent-purple, #8b5cf6)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 
 .descripcion {
@@ -112,6 +164,12 @@
   line-height: 1.75;
   margin: 0;
   max-width: 36rem;
+  text-wrap: pretty;
+}
+
+.descripcion strong {
+  color: var(--text-dark-secondary, #e2e8f0);
+  font-weight: 600;
 }
 
 .seccionSocial {
@@ -189,10 +247,11 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid rgba(59, 130, 246, 0.35);
+  border: 4px solid rgba(59, 130, 246, 0.45);
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.45),
-    0 0 40px rgba(59, 130, 246, 0.2);
+    0 0 48px rgba(59, 130, 246, 0.32),
+    0 0 80px rgba(139, 92, 246, 0.12);
 }
 
 .bordeAnimado {
@@ -201,7 +260,10 @@
   border-radius: 50%;
   z-index: 0;
   background: conic-gradient(from 180deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
-  opacity: 0.55;
+  opacity: 0.78;
+  box-shadow:
+    0 0 28px rgba(59, 130, 246, 0.35),
+    0 0 48px rgba(139, 92, 246, 0.22);
   animation: spinSlow 8s linear infinite;
   pointer-events: none;
 }
@@ -253,32 +315,32 @@
 .circuloGradiente3 {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0.35;
+  filter: blur(56px);
+  opacity: 0.52;
 }
 
 .circuloGradiente1 {
-  width: min(70vw, 420px);
-  height: min(70vw, 420px);
-  top: -15%;
-  left: -20%;
-  background: radial-gradient(circle, rgba(59, 130, 246, 0.5), transparent 70%);
+  width: min(78vw, 480px);
+  height: min(78vw, 480px);
+  top: -18%;
+  left: -22%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.62), transparent 68%);
 }
 
 .circuloGradiente2 {
-  width: min(50vw, 300px);
-  height: min(50vw, 300px);
-  bottom: 5%;
-  right: -10%;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.45), transparent 70%);
+  width: min(58vw, 360px);
+  height: min(58vw, 360px);
+  bottom: 0%;
+  right: -14%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.55), transparent 68%);
 }
 
 .circuloGradiente3 {
-  width: min(40vw, 240px);
-  height: min(40vw, 240px);
-  top: 40%;
-  left: 35%;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.3), transparent 70%);
+  width: min(48vw, 300px);
+  height: min(48vw, 300px);
+  top: 32%;
+  left: 42%;
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.42), transparent 68%);
 }
 
 @media (max-width: 900px) {
@@ -289,6 +351,11 @@
 
   .ladoTexto {
     align-items: center;
+  }
+
+  .saludo {
+    justify-content: center;
+    text-align: center;
   }
 
   .lineaDecorariva {

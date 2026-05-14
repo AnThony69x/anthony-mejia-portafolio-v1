@@ -1,5 +1,5 @@
 // BUILD_ID is injected at build time to force cache refresh on new deploys
-const BUILD_ID = '20260514031127';
+const BUILD_ID = '20260514034514';
 const CACHE_VERSION = BUILD_ID || 'dev';
 const CACHE_NAME = `anthony-portafolio-${CACHE_VERSION}`;
 const STATIC_CACHE = `static-cache-${CACHE_VERSION}`;
