@@ -1,5 +1,4 @@
 import React, { Suspense, lazy } from 'react'
-import Encabezado from './components/Encabezado/Encabezado'
 import Heroe from './components/Heroe/Heroe'
 import Contacto from './components/Contacto/Contacto'
 import './styles/globales.css'
@@ -20,7 +19,7 @@ const Loading = () => (
     <div style={{
       width: '40px',
       height: '40px',
-      border: '4px solid #1e293b',
+      border: '4px solid #101922',
       borderTop: '4px solid #3b82f6',
       borderRadius: '50%',
       animation: 'spin 1s linear infinite'
@@ -30,8 +29,17 @@ const Loading = () => (
 
 function App() {
   return (
-    <div className="App" style={{ width: '100%', minHeight: '100vh', margin: 0, padding: 0 }}>
-      <Encabezado />
+    <div
+      className="App"
+      style={{
+        width: '100%',
+        minHeight: '100vh',
+        margin: 0,
+        padding: 0,
+        position: 'relative',
+        zIndex: 1,
+      }}
+    >
       <Heroe />
       
       {/* ✅ SobreMi con Suspense */}

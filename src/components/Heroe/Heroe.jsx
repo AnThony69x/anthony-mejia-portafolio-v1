@@ -43,7 +43,7 @@ const Heroe = () => {
             </p>
 
             <div className={styles.seccionSocial}>
-              <EnlacesSociales />
+              <EnlacesSociales embedHero />
             </div>
 
             <div className={styles.botonesAccion}>

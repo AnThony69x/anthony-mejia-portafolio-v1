@@ -67,10 +67,7 @@
   width: 100%;
 }
 
-/* Scroll suave */
-html {
-  scroll-behavior: smooth;
-}
+/* Scroll: ScrollSmoother / GSAP controla el suavizado; evitar scroll-behavior nativo */
 
 /* Asegurar fullwidth en todos los elementos principales */
 body, #root, .App {

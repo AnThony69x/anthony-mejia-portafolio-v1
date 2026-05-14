@@ -1,0 +1,128 @@
+.wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% -20%, rgba(59, 130, 246, 0.22), transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 30%, rgba(139, 92, 246, 0.14), transparent 50%),
+    radial-gradient(ellipse 70% 50% at 0% 80%, rgba(6, 182, 212, 0.08), transparent 45%),
+    linear-gradient(180deg, var(--bg-atmosphere-top) 0%, var(--bg-atmosphere-mid) 45%, var(--bg-atmosphere-bottom) 100%);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 85% 70% at 50% 40%, black 10%, transparent 72%);
+}
+
+.blobs {
+  position: absolute;
+  inset: -15%;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.45;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.blob:nth-child(1) {
+  width: min(55vw, 420px);
+  height: min(55vw, 420px);
+  top: 8%;
+  left: -8%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.55), transparent 70%);
+  animation: blobDriftA 22s ease-in-out infinite;
+}
+
+.blob:nth-child(2) {
+  width: min(45vw, 360px);
+  height: min(45vw, 360px);
+  top: 35%;
+  right: -5%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.5), transparent 70%);
+  animation: blobDriftB 26s ease-in-out infinite;
+}
+
+.blob:nth-child(3) {
+  width: min(50vw, 400px);
+  height: min(50vw, 400px);
+  bottom: 5%;
+  left: 25%;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.35), transparent 72%);
+  animation: blobDriftC 20s ease-in-out infinite;
+}
+
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.35;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 180px 180px;
+}
+
+@keyframes blobDriftA {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6%, 4%) scale(1.06);
+  }
+}
+
+@keyframes blobDriftB {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-5%, 6%) scale(1.05);
+  }
+}
+
+@keyframes blobDriftC {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(4%, -5%) scale(1.04);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+    opacity: 0.28;
+  }
+
+  .canvas {
+    opacity: 0.12;
+  }
+}

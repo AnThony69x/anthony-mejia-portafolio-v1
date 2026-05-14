@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { FaCode, FaBars, FaTimes } from 'react-icons/fa'
+import { useSmoothScroll } from '../../context/SmoothScrollContext.jsx'
 import styles from './Encabezado.module.css'
 
 const Encabezado = () => {
+  const { scrollToAnchor } = useSmoothScroll()
   const [menuAbierto, setMenuAbierto] = useState(false)
   const [scrolleado, setScrolleado] = useState(false)
   const [seccionActiva, setSeccionActiva] = useState('inicio')
@@ -75,17 +77,14 @@ const Encabezado = () => {
         }
       }
 
-      if (seccionActual !== seccionActiva) {
-        setSeccionActiva(seccionActual)
-      }
+      setSeccionActiva((prev) => (prev !== seccionActual ? seccionActual : prev))
     }
 
-    window.addEventListener('scroll', manejarScroll)
-    // Ejecutar una vez al cargar
+    window.addEventListener('scroll', manejarScroll, { passive: true })
     manejarScroll()
-    
+
     return () => window.removeEventListener('scroll', manejarScroll)
-  }, [seccionActiva]) // Agregar seccionActiva como dependencia
+  }, [])
 
   // CORREGIDO: Detectar sección activa con configuración mejorada
   useEffect(() => {
@@ -208,16 +207,8 @@ const Encabezado = () => {
     const targetElement = document.getElementById(targetId)
     
     if (targetElement) {
-      const headerHeight = 80 // Altura aproximada del header
-      const targetPosition = targetElement.offsetTop - headerHeight
-      
-      // Actualizar inmediatamente la sección activa
       setSeccionActiva(targetId)
-      
-      window.scrollTo({
-        top: targetPosition,
-        behavior: 'smooth'
-      })
+      scrollToAnchor(href, false)
     }
   }
 

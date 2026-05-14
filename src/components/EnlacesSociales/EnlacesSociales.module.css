@@ -2,6 +2,15 @@
   margin-bottom: 2.5rem;
 }
 
+/* Dentro del panel glass del hero */
+.seccionSocial.enHero .etiquetaSocial {
+  color: #94a3b8;
+}
+
+.seccionSocial.enHero {
+  margin-bottom: 1.35rem;
+}
+
 /* ENCABEZADO */
 .encabezado {
   margin-bottom: 1.5rem;
@@ -41,7 +50,7 @@
   width: clamp(42px, 10vw, 48px);
   height: clamp(42px, 10vw, 48px);
   border-radius: 50%;
-  background: #334155;
+  background: #1a222e;
   color: white;
   text-decoration: none;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -139,7 +148,7 @@
   bottom: -45px;
   left: 50%;
   transform: translateX(-50%);
-  background: #1e293b;
+  background: #101820;
   color: white;
   padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.6rem, 1.5vw, 0.8rem);
   border-radius: 6px;

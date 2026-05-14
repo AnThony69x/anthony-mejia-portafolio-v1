@@ -8,7 +8,7 @@ import {
 import { SiGmail } from 'react-icons/si'
 import styles from './EnlacesSociales.module.css'
 
-const EnlacesSociales = () => {
+const EnlacesSociales = ({ embedHero = false }) => {
   const enlacesSociales = [
     { 
       icono: FaGithub, 
@@ -48,7 +48,9 @@ const EnlacesSociales = () => {
   ]
 
   return (
-    <div className={styles.seccionSocial}>
+    <div
+      className={`${styles.seccionSocial} ${embedHero ? styles.enHero : ''}`}
+    >
       <div className={styles.encabezado}>
         <span className={styles.etiquetaSocial}>Sígueme en:</span>
         <div className={styles.lineaDecorativa}></div>

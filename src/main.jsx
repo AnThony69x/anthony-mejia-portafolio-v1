@@ -2,6 +2,9 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
+import AmbientBackground from './components/AmbientBackground/AmbientBackground.jsx'
+import Encabezado from './components/Encabezado/Encabezado.jsx'
+import { SmoothScrollProvider } from './context/SmoothScrollContext.jsx'
 
 // ✅ Importar utilidades (solo las líneas necesarias)
 import { registrarSW, configurarInstalacion, desregistrarSW } from './utils/pwa.js'
@@ -32,6 +35,13 @@ setTimeout(() => {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    <SmoothScrollProvider>
+      {/* Fuera de #smooth-content: ScrollSmoother aplica transform al contenido y rompe fixed + orden de capas del fondo */}
+      <div style={{ display: 'contents' }}>
+        <Encabezado />
+        <AmbientBackground />
+      </div>
+      <App />
+    </SmoothScrollProvider>
   </StrictMode>,
 )

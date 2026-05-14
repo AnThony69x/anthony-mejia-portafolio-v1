@@ -7,11 +7,11 @@
   padding: clamp(6rem, 12vh, 8rem) 0 clamp(4rem, 8vh, 6rem);
   background: linear-gradient(
     135deg,
-    #0f172a 0%,
-    #1e293b 25%,
-    #334155 50%,
-    #1e293b 75%,
-    #0f172a 100%
+    #020308 0%,
+    #0a1018 25%,
+    #101820 50%,
+    #0a1018 75%,
+    #020308 100%
   );
   position: relative;
   overflow: hidden;

@@ -1,25 +1,35 @@
 :root {
-  /* Colores principales - Tema claro y oscuro */
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-card: #ffffff;
-  --bg-dark: #0f1419;
-  --bg-dark-secondary: #1a1f2e;
-  --bg-dark-card: #252a3a;
-  
-  /* Colores de texto - Tema claro */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
+  /* Paleta oscura profunda */
+  --color-bg-main: #020308;
+  --color-bg-surface: #080d18;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-glass: rgba(255, 255, 255, 0.05);
+
+  --bg-primary: var(--color-bg-main);
+  --bg-secondary: var(--color-bg-surface);
+  --bg-card: var(--color-bg-surface);
+  --bg-dark: #010205;
+  --bg-dark-secondary: #080d18;
+  --bg-dark-card: #101922;
+  --bg-body-base: var(--color-bg-main);
+  --bg-atmosphere-top: #020308;
+  --bg-atmosphere-mid: #080d18;
+  --bg-atmosphere-bottom: #020308;
+
+  /* Texto sobre fondo oscuro */
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
   --text-dark: #ffffff;
-  --text-dark-secondary: #a0a9c0;
-  --text-dark-muted: #6b7280;
+  --text-dark-secondary: #cbd5e1;
+  --text-dark-muted: #94a3b8;
   
   /* Colores de acento */
   --accent-color: #3b82f6;
   --accent-hover: #2563eb;
   --accent-dark: #1d4ed8;
   --accent-light: #60a5fa;
+  --accent-purple: #8b5cf6;
   
   /* Colores adicionales */
   --success-color: #10b981;
@@ -29,21 +39,31 @@
   
   /* Gradientes */
   --gradient-primary: linear-gradient(135deg, var(--accent-color), #8b5cf6);
-  --gradient-secondary: linear-gradient(135deg, #8b5cf6, #ec4899);
-  --gradient-accent: linear-gradient(90deg, var(--accent-color), #8b5cf6, #ec4899);
-  
+  --gradient-secondary: linear-gradient(135deg, #8b5cf6, var(--accent-color));
+  --gradient-accent: linear-gradient(90deg, var(--accent-color), #8b5cf6);
+  --gradient-section: linear-gradient(
+    135deg,
+    var(--color-bg-main) 0%,
+    #0a1018 28%,
+    var(--color-bg-surface) 50%,
+    #0a1018 72%,
+    var(--color-bg-main) 100%
+  );
+  --border-subtle: var(--color-border);
+  --glass-background: var(--color-glass);
+
   /* Espaciado y bordes */
   --border-radius: 8px;
   --border-radius-lg: 12px;
   --border-radius-xl: 16px;
   --border-radius-full: 9999px;
   
-  /* Sombras - Tema claro */
-  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  /* Sombras — fondo oscuro */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   
   /* Sombras de color */
   --shadow-accent: 0 10px 25px rgba(59, 130, 246, 0.3);
@@ -135,36 +155,32 @@
   --blur-3xl: 64px;
 }
 
-/* Tema oscuro */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-primary: var(--bg-dark);
-    --bg-secondary: var(--bg-dark-secondary);
-    --bg-card: var(--bg-dark-card);
-    
-    --text-primary: var(--text-dark);
-    --text-secondary: var(--text-dark-secondary);
-    --text-muted: var(--text-dark-muted);
-    
-    /* Sombras para tema oscuro */
-    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
-    --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  }
-}
-
-/* Clase para forzar tema oscuro */
+/* Clase para forzar el mismo look eléctrico oscuro (alias de :root) */
 .dark {
-  --bg-primary: var(--bg-dark);
-  --bg-secondary: var(--bg-dark-secondary);
-  --bg-card: var(--bg-dark-card);
-  
-  --text-primary: var(--text-dark);
-  --text-secondary: var(--text-dark-secondary);
-  --text-muted: var(--text-dark-muted);
-  
+  --color-bg-main: #020308;
+  --color-bg-surface: #080d18;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-glass: rgba(255, 255, 255, 0.05);
+  --bg-primary: var(--color-bg-main);
+  --bg-secondary: var(--color-bg-surface);
+  --bg-card: var(--color-bg-surface);
+  --bg-body-base: var(--color-bg-main);
+  --bg-atmosphere-top: #020308;
+  --bg-atmosphere-mid: #080d18;
+  --bg-atmosphere-bottom: #020308;
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+  --border-subtle: var(--color-border);
+  --glass-background: var(--color-glass);
+  --gradient-section: linear-gradient(
+    135deg,
+    var(--color-bg-main) 0%,
+    #0a1018 28%,
+    var(--color-bg-surface) 50%,
+    #0a1018 72%,
+    var(--color-bg-main) 100%
+  );
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
@@ -174,14 +190,30 @@
 
 /* Clase para forzar tema claro */
 .light {
+  --color-bg-main: #f8fafc;
+  --color-bg-surface: #ffffff;
+  --color-border: rgba(15, 23, 42, 0.08);
+  --color-glass: rgba(255, 255, 255, 0.72);
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
   --bg-card: #ffffff;
-  
+  --bg-body-base: var(--color-bg-main);
+  --bg-atmosphere-top: #f8fafc;
+  --bg-atmosphere-mid: #f1f5f9;
+  --bg-atmosphere-bottom: #e8eef5;
+  --border-subtle: var(--color-border);
+  --glass-background: var(--color-glass);
+  --gradient-section: linear-gradient(
+    135deg,
+    #f8fafc 0%,
+    #e2e8f0 50%,
+    #f8fafc 100%
+  );
+
   --text-primary: #1e293b;
   --text-secondary: #64748b;
   --text-muted: #94a3b8;
-  
+
   --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);

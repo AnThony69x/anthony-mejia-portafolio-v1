@@ -1,4 +1,7 @@
-/* Agregar al final del archivo */
+@import "tailwindcss";
+@source "../index.html";
+@source "./**/*.{js,jsx,ts,tsx}";
+
 #root {
   width: 100% !important;
   max-width: none !important;

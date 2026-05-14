@@ -13,12 +13,17 @@ import {
   SiNestjs,
   SiSupabase
 } from 'react-icons/si';
+import { ScrollTrigger } from '../../gsap/registerGSAP';
 import styles from './SobreMi.module.css';
 
 const SobreMi = () => {
   const [tarjetaActiva, setTarjetaActiva] = useState(null);
   const sectionRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    requestAnimationFrame(() => ScrollTrigger.refresh());
+  }, []);
 
   // Detectar visibilidad de la sección
   useEffect(() => {
