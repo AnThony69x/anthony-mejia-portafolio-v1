@@ -1,22 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { MdOutlineRocketLaunch } from "react-icons/md";
 import {
   FaGithub,
   FaExternalLinkAlt,
-  FaReact,
-  FaNodeJs,
-  FaHtml5,
-  FaCss3Alt,
-  FaJs,
-  FaDatabase,
   FaPlay,
   FaStar,
+  FaChevronDown,
+  FaChevronUp,
 } from "react-icons/fa";
-import { MdOutlineRocketLaunch } from "react-icons/md";
-import { SiTailwindcss, SiMongodb, SiPostgresql, SiNextdotjs, SiSqlite, SiVite } from "react-icons/si";
+import { obtenerIconoTecnologia } from "../../data/tecnologiasIconos";
 import styles from "./Proyectos.module.css";
+
+const PROYECTOS_INICIALES = 4;
+
+function proyectoEnCategoria(proyecto, categoriaId) {
+  const c = proyecto.categoria;
+  if (Array.isArray(c)) return c.includes(categoriaId);
+  return c === categoriaId;
+}
 
 const Proyectos = () => {
   const [filtroActivo, setFiltroActivo] = useState("todos");
+  const [verMasProyectos, setVerMasProyectos] = useState(false);
+
+  useEffect(() => {
+    setVerMasProyectos(false);
+  }, [filtroActivo]);
 
   // Datos de proyectos
   const proyectos = [
@@ -48,7 +57,7 @@ const Proyectos = () => {
   descripcion: "Experiencia interactiva que transforma datos sobre el uso de IA en estudiantes en una narrativa visual inmersiva, combinando gráficos dinámicos, animaciones cinematográficas y storytelling basado en datos reales.",
   imagen: "/proyecto2.jpg",
   tecnologias: ["React", "Vite", "D3.js", "GSAP", "ScrollTrigger", "Lenis", "CSS"],
-  categoria: "frontend",
+  categoria: ["frontend", "data-visualization"],
   githubUrl: "https://github.com/AnThony69x/EduIa-Visualizacion",
   liveUrl: "https://edu-ia-visualizacion.vercel.app/",
   destacado: true
@@ -145,88 +154,135 @@ const Proyectos = () => {
   // Filtros de categorías
   const categorias = [
     { id: "todos", label: "Todos", count: proyectos.length },
-    { id: "fullstack", label: "Full Stack", count: proyectos.filter(p => p.categoria === "fullstack").length },
-    { id: "mobile", label: "Mobile", count: proyectos.filter(p => p.categoria === "mobile").length },
-    { id: "frontend", label: "Frontend", count: proyectos.filter(p => p.categoria === "frontend").length },
-    { id: "backend", label: "Backend", count: proyectos.filter(p => p.categoria === "backend").length },
-    { id: "data-visualization", label: "Data Visualization", count: proyectos.filter(p => p.categoria === "data-visualization").length },
+    {
+      id: "fullstack",
+      label: "Full Stack",
+      count: proyectos.filter((p) => proyectoEnCategoria(p, "fullstack")).length,
+    },
+    {
+      id: "mobile",
+      label: "Mobile",
+      count: proyectos.filter((p) => proyectoEnCategoria(p, "mobile")).length,
+    },
+    {
+      id: "frontend",
+      label: "Frontend",
+      count: proyectos.filter((p) => proyectoEnCategoria(p, "frontend")).length,
+    },
+    {
+      id: "backend",
+      label: "Backend",
+      count: proyectos.filter((p) => proyectoEnCategoria(p, "backend")).length,
+    },
+    {
+      id: "data-visualization",
+      label: "Data Visualization",
+      count: proyectos.filter((p) =>
+        proyectoEnCategoria(p, "data-visualization")
+      ).length,
+    },
   ];
 
-// Función para obtener el icono de la tecnología
-const obtenerIconoTech = (tech) => {
-  const coloresTech = {
-    "React": "#61DAFB",
-    "Node.js": "#68A063",
-    "MongoDB": "#47A248",
-    "PostgreSQL": "#336791",
-    "Tailwind": "#06B6D4",
-    "TailwindCSS": "#06B6D4",
-    "Next.js": "#F8FAFC",
-    "JavaScript": "#F7DF1E",
-    "HTML": "#E34F26",
-    "CSS": "#1572B6",
-    "Vue": "#42B883",
-    "Vite": "#646CFF",
-    "Express.js": "#8FA3B0",
-    "Supabase": "#3ECF8E",
-    "SQLite": "#0F80CC",
-    "TypeORM": "#E83524",
-    "FastAPI": "#009688",
-    "Python": "#3776AB",
-    "TensorFlow": "#FF6F00",
-    "Docker": "#2496ED",
-    "D3.js": "#F68E56",
-    "GSAP": "#88CE02",
-    "ScrollTrigger": "#84CC16",
-    "Lenis": "#38BDF8",
-    "Kotlin": "#7F52FF",
-    "Jetpack Compose": "#4285F4",
-    "Firebase": "#FFCA28",
-    "Firestore": "#FFA000",
-    "Firebase Auth": "#FB8C00",
-    "Firebase Storage": "#F57C00",
-    "Material3": "#6750A4",
-    "Flutter": "#02569B",
-    "Dart": "#0175C2",
-    "Riverpod": "#4E7FFF",
-    "Hive": "#F9A826",
-    "GoRouter": "#00ADD8",
-    "TypeScript": "#3178C6",
-    "Edge Functions": "#22C55E",
-    "Stripe": "#635BFF",
-    "shadcn/ui": "#E2E8F0",
-    "Linux": "#000000",
-    "Git": "#F05032",
-    "GitHub": "#181717"
-  };
-
-  const iconos = {
-    "React": <FaReact style={{ color: coloresTech["React"] }} />,
-    "Node.js": <FaNodeJs style={{ color: coloresTech["Node.js"] }} />,
-    "MongoDB": <SiMongodb style={{ color: coloresTech["MongoDB"] }} />,
-    "PostgreSQL": <SiPostgresql style={{ color: coloresTech["PostgreSQL"] }} />,
-    "Tailwind": <SiTailwindcss style={{ color: coloresTech["Tailwind"] }} />,
-    "TailwindCSS": <SiTailwindcss style={{ color: coloresTech["TailwindCSS"] }} />,
-    "Next.js": <SiNextdotjs style={{ color: coloresTech["Next.js"] }} />,
-    "JavaScript": <FaJs style={{ color: coloresTech["JavaScript"] }} />,
-    "HTML": <FaHtml5 style={{ color: coloresTech["HTML"] }} />,
-    "CSS": <FaCss3Alt style={{ color: coloresTech["CSS"] }} />,
-    // AGREGADOS PARA TUS PROYECTOS
-    "Vue": <FaReact style={{ color: coloresTech["Vue"] }} />,
-    "Vite": <SiVite style={{ color: coloresTech["Vite"] }} />,
-    "Express.js": <FaNodeJs style={{ color: coloresTech["Express.js"] }} />,
-    "Supabase": <FaDatabase style={{ color: coloresTech["Supabase"] }} />,
-    "SQLite": <SiSqlite style={{ color: coloresTech["SQLite"] }} />,
-    "TypeORM": <FaDatabase style={{ color: coloresTech["TypeORM"] }} />
-    
-  };
-  return iconos[tech] || <FaDatabase style={{ color: coloresTech[tech] || "#94A3B8" }} />;
-};
-
   // Filtrar proyectos
-  const proyectosFiltrados = filtroActivo === "todos" 
-    ? proyectos 
-    : proyectos.filter(proyecto => proyecto.categoria === filtroActivo);
+  const proyectosFiltrados =
+    filtroActivo === "todos"
+      ? proyectos
+      : proyectos.filter((p) => proyectoEnCategoria(p, filtroActivo));
+
+  const proyectosPrimeros = proyectosFiltrados.slice(0, PROYECTOS_INICIALES);
+  const proyectosRestantes = proyectosFiltrados.slice(PROYECTOS_INICIALES);
+  const hayMasProyectos = proyectosRestantes.length > 0;
+
+  const renderTarjetaProyecto = (proyecto, index) => (
+    <div
+      key={proyecto.id}
+      className={`${styles.proyectoCard} ${
+        proyecto.destacado ? styles.destacado : ""
+      }`}
+      style={{ animationDelay: `${index * 0.1}s` }}
+    >
+      <div className={styles.imagenContainer}>
+        <img
+          src={proyecto.imagen}
+          alt={`Captura de pantalla del proyecto ${proyecto.titulo}`}
+          className={`${styles.imagenProyecto} ${
+            proyecto.categoria === "mobile" ? styles.imagenMobile : ""
+          }`}
+          loading="lazy"
+        />
+        <div className={styles.overlay}>
+          <div className={styles.botonesOverlay}>
+            <a
+              href={proyecto.githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.botonOverlay}
+              aria-label="Ver código en GitHub"
+            >
+              <FaGithub />
+            </a>
+            {proyecto.liveUrl && (
+              <a
+                href={proyecto.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.botonOverlay}
+                aria-label="Ver proyecto en vivo"
+              >
+                <FaExternalLinkAlt />
+              </a>
+            )}
+          </div>
+        </div>
+
+        {proyecto.destacado && (
+          <div className={styles.badgeDestacado}>
+            <FaStar className={styles.badgeDestacadoIcono} aria-hidden />
+            <span>Destacado</span>
+          </div>
+        )}
+      </div>
+
+      <div className={styles.contenidoCard}>
+        <h3 className={styles.tituloProyecto}>{proyecto.titulo}</h3>
+        <p className={styles.descripcionProyecto}>{proyecto.descripcion}</p>
+
+        <div className={styles.tecnologias}>
+          {proyecto.tecnologias.map((tech, techIndex) => (
+            <div key={techIndex} className={styles.techBadge}>
+              <span className={styles.techIcono}>
+                {obtenerIconoTecnologia(tech)}
+              </span>
+              <span className={styles.techNombre}>{tech}</span>
+            </div>
+          ))}
+        </div>
+
+        <div className={styles.enlaces}>
+          <a
+            href={proyecto.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.enlace} ${styles.enlaceSecundario}`}
+          >
+            <FaGithub />
+            Código
+          </a>
+          {proyecto.liveUrl && (
+            <a
+              href={proyecto.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.enlace} ${styles.enlacePrimario}`}
+            >
+              <FaPlay />
+              Ver Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section className={styles.proyectos} id="proyectos">
@@ -264,104 +320,59 @@ const obtenerIconoTech = (tech) => {
           </div>
         </div>
 
-        {/* Grid de proyectos */}
-        <div className={styles.gridProyectos}>
-          {proyectosFiltrados.map((proyecto, index) => (
-            <div 
-              key={proyecto.id}
-              className={`${styles.proyectoCard} ${
-                proyecto.destacado ? styles.destacado : ""
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
+        {/* Grid de proyectos: primeros 4 + desplegable */}
+        <div
+          className={`${styles.gridProyectos} ${
+            hayMasProyectos ? styles.gridProyectosConMas : ""
+          }`}
+        >
+          {proyectosPrimeros.map((proyecto, index) =>
+            renderTarjetaProyecto(proyecto, index)
+          )}
+        </div>
+
+        {hayMasProyectos && (
+          <div className={styles.verMasZona}>
+            <button
+              type="button"
+              className={styles.verMasToggle}
+              aria-expanded={verMasProyectos}
+              aria-controls="proyectos-grid-extra"
+              id="proyectos-ver-mas-btn"
+              onClick={() => setVerMasProyectos((v) => !v)}
             >
-              
-              {/* Imagen del proyecto */}
-              <div className={styles.imagenContainer}>
-                <img 
-                  src={proyecto.imagen} 
-                  alt={`Captura de pantalla del proyecto ${proyecto.titulo}`}
-                  className={`${styles.imagenProyecto} ${
-                    proyecto.categoria === "mobile" ? styles.imagenMobile : ""
-                  }`}
-                  loading="lazy"
-                />
-                <div className={styles.overlay}>
-                  <div className={styles.botonesOverlay}>
-                    <a
-                      href={proyecto.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.botonOverlay}
-                      aria-label="Ver código en GitHub"
-                    >
-                      <FaGithub />
-                    </a>
-                    {proyecto.liveUrl && (
-                      <a
-                        href={proyecto.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.botonOverlay}
-                        aria-label="Ver proyecto en vivo"
-                      >
-                        <FaExternalLinkAlt />
-                      </a>
-                    )}
-                  </div>
-                </div>
-                
-                {proyecto.destacado && (
-                  <div className={styles.badgeDestacado}>
-                    <FaStar className={styles.badgeDestacadoIcono} aria-hidden />
-                    <span>Destacado</span>
-                  </div>
+              {verMasProyectos ? (
+                <>
+                  <FaChevronUp aria-hidden />
+                  Mostrar menos
+                </>
+              ) : (
+                <>
+                  <FaChevronDown aria-hidden />
+                  {proyectosRestantes.length === 1
+                    ? "Ver 1 proyecto más"
+                    : `Ver ${proyectosRestantes.length} proyectos más`}
+                </>
+              )}
+            </button>
+
+            {verMasProyectos && (
+              <div
+                id="proyectos-grid-extra"
+                className={styles.gridProyectosExtra}
+                role="region"
+                aria-labelledby="proyectos-ver-mas-btn"
+              >
+                {proyectosRestantes.map((proyecto, index) =>
+                  renderTarjetaProyecto(
+                    proyecto,
+                    proyectosPrimeros.length + index
+                  )
                 )}
               </div>
-
-              {/* Contenido del proyecto */}
-              <div className={styles.contenidoCard}>
-                <h3 className={styles.tituloProyecto}>{proyecto.titulo}</h3>
-                <p className={styles.descripcionProyecto}>{proyecto.descripcion}</p>
-
-                {/* Tecnologías usadas */}
-                <div className={styles.tecnologias}>
-                  {proyecto.tecnologias.map((tech, techIndex) => (
-                    <div key={techIndex} className={styles.techBadge}>
-                      <span className={styles.techIcono}>
-                        {obtenerIconoTech(tech)}
-                      </span>
-                      <span className={styles.techNombre}>{tech}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Enlaces del proyecto */}
-                <div className={styles.enlaces}>
-                  <a
-                    href={proyecto.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.enlace} ${styles.enlaceSecundario}`}
-                  >
-                    <FaGithub />
-                    Código
-                  </a>
-                  {proyecto.liveUrl && (
-                    <a
-                      href={proyecto.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`${styles.enlace} ${styles.enlacePrimario}`}
-                    >
-                      <FaPlay />
-                      Ver Demo
-                    </a>
-                  )}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+            )}
+          </div>
+        )}
       </div>
       
       {/* Elementos decorativos de fondo */}

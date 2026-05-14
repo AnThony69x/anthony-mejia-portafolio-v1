@@ -77,16 +77,16 @@
 @keyframes wave {
   0%,
   100% {
-    transform: rotate(0deg);
+    transform: scaleX(-1) rotate(0deg);
   }
   20% {
-    transform: rotate(18deg);
+    transform: scaleX(-1) rotate(18deg);
   }
   40% {
-    transform: rotate(-10deg);
+    transform: scaleX(-1) rotate(-10deg);
   }
   60% {
-    transform: rotate(14deg);
+    transform: scaleX(-1) rotate(14deg);
   }
 }
 
@@ -317,5 +317,9 @@
   .bordeAnimado,
   .iconoFlotante {
     animation: none;
+  }
+
+  .saludoIcono {
+    transform: scaleX(-1);
   }
 }
