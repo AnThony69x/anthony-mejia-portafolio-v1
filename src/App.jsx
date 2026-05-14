@@ -19,7 +19,7 @@ const Loading = () => (
     <div style={{
       width: '40px',
       height: '40px',
-      border: '4px solid #101922',
+      border: '4px solid rgba(255, 255, 255, 0.08)',
       borderTop: '4px solid #3b82f6',
       borderRadius: '50%',
       animation: 'spin 1s linear infinite'

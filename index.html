@@ -20,8 +20,8 @@
   
   <!-- ✅ Información del sitio -->
   <meta name="generator" content="React 18.2.0, Vite 5.0" />
-  <meta name="theme-color" content="#3b82f6" />
-  <meta name="msapplication-TileColor" content="#0f172a" />
+  <meta name="theme-color" content="#020308" />
+  <meta name="msapplication-TileColor" content="#020308" />
   <meta name="application-name" content="Anthony Mejia Portafolio" />
   
   <!-- ✅ Open Graph Protocol con información real -->
@@ -77,6 +77,25 @@
   
   <!-- ✅ Critical CSS optimizado -->
   <style>
+    /* Alineado con src/styles/variables.css (antes de que cargue el bundle) */
+    :root {
+      --color-bg-main: #020308;
+      --color-bg-surface: #080d18;
+      --text-primary: #ffffff;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-color: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --gradient-page: linear-gradient(
+        135deg,
+        #020308 0%,
+        #0a1018 28%,
+        #080d18 50%,
+        #0a1018 72%,
+        #020308 100%
+      );
+    }
+
     /* Critical CSS above-the-fold */
     * { 
       box-sizing: border-box; 
@@ -86,8 +105,8 @@
     
     body { 
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
-      color: #f1f5f9;
+      background: var(--color-bg-main);
+      color: var(--text-primary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -113,7 +132,7 @@
       left: 0; 
       width: 100%; 
       height: 100%; 
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 60%, #1e293b 80%, #0f172a 100%);
+      background: var(--gradient-page);
       display: flex; 
       flex-direction: column;
       align-items: center; 
@@ -140,16 +159,16 @@
     .spinner {
       width: 60px;
       height: 60px;
-      border: 4px solid rgba(59, 130, 246, 0.1);
-      border-top: 4px solid #3b82f6;
+      border: 4px solid rgba(255, 255, 255, 0.08);
+      border-top: 4px solid var(--accent-color);
       border-radius: 50%;
       animation: spin 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
       margin-bottom: 1.5rem;
-      box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+      box-shadow: 0 0 24px rgba(59, 130, 246, 0.25);
     }
     
     .loading-text {
-      color: #94a3b8;
+      color: var(--text-secondary);
       font-size: 1rem;
       font-weight: 500;
       letter-spacing: 1px;
@@ -158,7 +177,7 @@
     }
     
     .loading-subtext {
-      color: #64748b;
+      color: var(--text-muted);
       font-size: 0.8rem;
       font-weight: 400;
       letter-spacing: 0.5px;
@@ -167,8 +186,8 @@
     }
     
     @keyframes spin { 
-      0% { transform: rotate(0deg); filter: hue-rotate(0deg); }
-      100% { transform: rotate(360deg); filter: hue-rotate(360deg); } 
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); } 
     }
     
     @keyframes pulse {
@@ -183,8 +202,8 @@
       width: 1px;
       height: 1px;
       overflow: hidden;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-      color: white;
+      background: linear-gradient(135deg, var(--accent-color), var(--accent-purple));
+      color: var(--text-primary);
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       border-radius: 8px;
@@ -484,8 +503,8 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 40%, #334155 60%, #1e293b 80%, #0f172a 100%);
-      color: #f1f5f9;
+      background: var(--gradient-page);
+      color: var(--text-primary);
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -497,43 +516,43 @@
       line-height: 1.6;
     ">
       <div style="max-width: 600px;">
-        <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        <h1 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; background: linear-gradient(135deg, var(--accent-color), var(--accent-purple)); background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
           Anthony Mejia
         </h1>
-        <h2 style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 2rem; color: #94a3b8; font-weight: 500;">
+        <h2 style="font-size: clamp(1.2rem, 3vw, 1.8rem); margin-bottom: 2rem; color: var(--text-secondary); font-weight: 500;">
           Ingeniero de Software (Ecuador)
         </h2>
         
-        <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 12px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
-          <p style="font-size: 1.1rem; margin-bottom: 2rem; color: #e2e8f0;">
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 2rem; margin: 2rem 0; backdrop-filter: blur(10px);">
+          <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-primary);">
             Este portafolio requiere JavaScript para mostrar todas las funcionalidades interactivas, animaciones y componentes dinámicos.
           </p>
-          <p style="font-size: 1rem; color: #94a3b8; margin-bottom: 2rem;">
+          <p style="font-size: 1rem; color: var(--text-secondary); margin-bottom: 2rem;">
             Por favor, habilita JavaScript en tu navegador para ver mi trabajo completo.
           </p>
         </div>
 
         <div style="display: grid; gap: 1rem; margin: 2rem 0;">
-          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 1rem;">
+          <div style="background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.28); border-radius: 8px; padding: 1rem;">
             <p style="margin: 0; font-weight: 500; color: #10b981;">
               Email: <a href="mailto:anthony2003@gmail.com" style="color: #10b981; text-decoration: none;">anthony2003@gmail.com</a>
             </p>
           </div>
-          <div style="background: rgba(37, 211, 102, 0.1); border: 1px solid rgba(37, 211, 102, 0.3); border-radius: 8px; padding: 1rem;">
+          <div style="background: rgba(37, 211, 102, 0.12); border: 1px solid rgba(37, 211, 102, 0.28); border-radius: 8px; padding: 1rem;">
             <p style="margin: 0; font-weight: 500; color: #25D366;">
               WhatsApp: <a href="https://wa.me/+593979062065" style="color: #25D366; text-decoration: none;">+593 97 906 2065</a>
             </p>
           </div>
-          <div style="background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); border-radius: 8px; padding: 1rem;">
-            <p style="margin: 0; font-weight: 500; color: #3b82f6;">
-              LinkedIn: <a href="https://www.linkedin.com/in/anthony-mejia-1138891a8/" style="color: #3b82f6; text-decoration: none;">Anthony Mejia</a>
+          <div style="background: rgba(59, 130, 246, 0.12); border: 1px solid rgba(59, 130, 246, 0.28); border-radius: 8px; padding: 1rem;">
+            <p style="margin: 0; font-weight: 500; color: var(--accent-color);">
+              LinkedIn: <a href="https://www.linkedin.com/in/anthony-mejia-1138891a8/" style="color: var(--accent-color); text-decoration: none;">Anthony Mejia</a>
             </p>
           </div>
         </div>
 
-        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(30, 41, 59, 0.6); border-radius: 12px; border: 1px solid rgba(59, 130, 246, 0.2);">
-          <h3 style="color: #3b82f6; margin-bottom: 1rem; font-size: 1.2rem;">Tecnologías que domino</h3>
-          <p style="color: #94a3b8; margin: 0; font-size: 0.95rem;">
+        <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(8, 13, 24, 0.85); border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          <h3 style="color: var(--accent-color); margin-bottom: 1rem; font-size: 1.2rem;">Tecnologías que domino</h3>
+          <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
             React • Laravel • Vue.js • Node.js • NestJS • Supabase • PostgreSQL • Tailwind CSS • JavaScript • TypeScript
           </p>
         </div>
