@@ -64,9 +64,13 @@
   letter-spacing: -0.02em;
 }
 
-.emoji {
+.saludoIcono {
   display: inline-block;
   margin-left: 0.35rem;
+  vertical-align: middle;
+  width: 0.95em;
+  height: 0.95em;
+  color: #fbbf24;
   animation: wave 2.2s ease-in-out infinite;
 }
 
@@ -309,7 +313,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .emoji,
+  .saludoIcono,
   .bordeAnimado,
   .iconoFlotante {
     animation: none;

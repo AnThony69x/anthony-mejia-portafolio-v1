@@ -1,8 +1,17 @@
 import React, { useState } from "react";
-import { 
-  FaGithub, FaExternalLinkAlt, FaReact, FaNodeJs, 
-  FaHtml5, FaCss3Alt, FaJs, FaDatabase, FaPlay,
+import {
+  FaGithub,
+  FaExternalLinkAlt,
+  FaReact,
+  FaNodeJs,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaDatabase,
+  FaPlay,
+  FaStar,
 } from "react-icons/fa";
+import { MdOutlineRocketLaunch } from "react-icons/md";
 import { SiTailwindcss, SiMongodb, SiPostgresql, SiNextdotjs, SiSqlite, SiVite } from "react-icons/si";
 import styles from "./Proyectos.module.css";
 
@@ -228,7 +237,7 @@ const obtenerIconoTech = (tech) => {
           <div className={styles.encabezado}>
             <h2 className={styles.titulo}>
               Mis Proyectos
-              <span className={styles.emoji}>🚀</span>
+              <MdOutlineRocketLaunch className={styles.tituloIcono} aria-hidden />
             </h2>
             <div className={styles.lineaDecorativa}></div>
           </div>
@@ -303,7 +312,8 @@ const obtenerIconoTech = (tech) => {
                 
                 {proyecto.destacado && (
                   <div className={styles.badgeDestacado}>
-                    ⭐ Destacado
+                    <FaStar className={styles.badgeDestacadoIcono} aria-hidden />
+                    <span>Destacado</span>
                   </div>
                 )}
               </div>

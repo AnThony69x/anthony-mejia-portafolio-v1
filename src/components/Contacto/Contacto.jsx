@@ -242,7 +242,8 @@ const Contacto = () => {
             <span className={styles.tag}>Conectemos</span>
           </div>
           <h2 className={styles.titulo}>
-            📧 Contacto
+            <FaEnvelope className={styles.tituloIcono} aria-hidden />
+            Contacto
           </h2>
           <p className={styles.descripcion}>
             ¿Tienes un proyecto en mente o quieres colaborar? ¡Me encantaría saber de ti!

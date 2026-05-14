@@ -1,5 +1,6 @@
 import React from "react";
 import { FaReact, FaJs, FaLaravel } from "react-icons/fa";
+import { MdOutlineWavingHand } from "react-icons/md";
 import { SiPostgresql } from "react-icons/si";
 import EnlacesSociales from "../EnlacesSociales/EnlacesSociales";
 import styles from "./Heroe.module.css";
@@ -29,7 +30,7 @@ const Heroe = () => {
             <div className={styles.saludoContainer}>
               <h1 className={styles.saludo}>
                 Hola, soy Anthony Mejia
-                <span className={styles.emoji}>👋</span>
+                <MdOutlineWavingHand className={styles.saludoIcono} aria-hidden />
               </h1>
               <div className={styles.lineaDecorariva}></div>
             </div>
@@ -65,7 +66,7 @@ const Heroe = () => {
           {/* Lado derecho - Imagen de perfil */}
           <div className={styles.ladoImagen}>
             <div className={styles.imagenWrapper}>
-              <div className={styles.imagenContainer}>
+              <div className={styles.imagenContainer}> 
                 <img
                   src="/foto-perfil3.jpg"
                   alt="Foto de perfil de AnThony69x - Ingeniería de Software"

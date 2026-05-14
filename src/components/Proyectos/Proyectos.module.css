@@ -60,15 +60,12 @@
   letter-spacing: -0.02em;
 }
 
-.emoji {
-  font-size: 0.8em;
-  display: inline-block;
+.tituloIcono {
+  flex-shrink: 0;
+  width: 0.85em;
+  height: 0.85em;
+  color: #f59e0b;
   animation: bounce 2s infinite;
-  background: none !important; /* ARREGLO: Sin degradado en emoji */
-  -webkit-background-clip: initial !important;
-  -webkit-text-fill-color: initial !important;
-  background-clip: initial !important;
-  color: #f59e0b; /* Color dorado para el emoji */
 }
 
 .lineaDecorativa {
@@ -345,6 +342,9 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
   backdrop-filter: blur(10px);
   color: white;
@@ -355,6 +355,12 @@
   z-index: 3;
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+}
+
+.badgeDestacadoIcono {
+  width: 0.95em;
+  height: 0.95em;
+  flex-shrink: 0;
 }
 
 /* ================================== */
